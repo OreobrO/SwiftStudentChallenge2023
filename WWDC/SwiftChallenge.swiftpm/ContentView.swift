@@ -2,43 +2,110 @@ import SwiftUI
 
 struct ContentView : View {
     
-    @State var selectedColor: Color = .red
-    
-    
     var body: some View {
         
-        HStack {
-          
-            //이미지 버튼
-            Button(action: {
+        ZStack {
+            Rectangle()
+                .fill(Color(red: 220/255, green: 220/255, blue: 220/255))
+            
+            VStack {
+                Spacer().frame(height: 32).edgesIgnoringSafeArea(.top)
                 
-            }) {
-                Image("IMG_001")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 400, height: 700)
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                    .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.white, lineWidth: 10))
+                HStack(alignment: .top) {
+                    Spacer().frame(width: 32)
+                    Rectangle()
+                        .fill(Color.white)
+                        .frame(minWidth: 400, idealWidth: 400, maxWidth: 400, minHeight: 770, idealHeight: 770, maxHeight: nil, alignment: .top)
+                        .edgesIgnoringSafeArea(.all)
+                        .overlay(
+                            VStack (alignment: .leading) {
+                                Rectangle().fill(Color(red: 220/255, green: 220/255, blue: 220/255)).frame(height: 552).padding(EdgeInsets(top: 16, leading: 16, bottom: 0, trailing: 16))
+                                Text("NameofArtist \nThisIs TheTitleOfArt(1919)").font(.headline).bold().padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+                                Text("Oil paint on canvas").font(.body).padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+                                Spacer()
+                                HStack(alignment: .bottom) {
+                                    Spacer()
+                                    Button("Previous"){ }.buttonStyle(.bordered).controlSize(.large).font(.system(size: 16, weight: Font.Weight.bold)).foregroundColor(Color.black).padding(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0))
+                                    Button("Next"){ }.buttonStyle(.bordered).controlSize(.large).font(.system(size: 16, weight: Font.Weight.bold)).foregroundColor(Color.black).padding(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 16))
+                                }
+                            })
+                    Spacer().frame(width: 32)
+                    
+                    VStack {
+                        Spacer().frame(height: 332)
+                        RoundedRectangle(cornerRadius: 24)
+                            .fill(Color.white)
+                            .frame(minWidth: 698, idealWidth: 698, maxWidth: nil, minHeight: 438, idealHeight: 438, maxHeight: nil, alignment: .bottomTrailing)
+                            .overlay(
+                                HStack(alignment: .top) {
+                                    
+                                    VStack(alignment: .leading) {
+                                        Text("Drawing Board")
+                                            .font(.headline)
+                                        RoundedRectangle(cornerRadius: 16)
+                                            .fill(Color(red: 220/255, green: 220/255, blue: 220/255))
+                                        Spacer().frame(height: 16)
+                                        
+                                        HStack (alignment: .bottom) {
+                                            Button("Reset"){ }.buttonStyle(.bordered).controlSize(.large).font(.system(size: 16, weight: Font.Weight.bold)).foregroundColor(Color.black)
+                                            Button("Submit"){ }.buttonStyle(.bordered).controlSize(.large).font(.system(size: 16, weight: Font.Weight.bold)).foregroundColor(Color.black)
+                                        }
+                                    }
+                                    Spacer().frame(width: 16)
+                                    
+                                    VStack(alignment: .leading) {
+                                        Text("Match Color")
+                                            .font(.headline)
+                                        RoundedRectangle(cornerRadius: 12)
+                                            .fill(Color(red: 220/255, green: 220/255, blue: 220/255))
+                                            .frame(width: 140)
+                                        Text("Mix Color")
+                                            .font(.headline)
+                                        Button("Cyan"){ }.buttonStyle(.bordered).controlSize(.regular).font(.system(size: 12, weight: Font.Weight.bold)).foregroundColor(Color.black)
+                                        Button("Magenta"){ }.buttonStyle(.bordered).controlSize(.regular).font(.system(size: 12, weight: Font.Weight.bold)).foregroundColor(Color.black)
+                                        Button("Yellow"){ }.buttonStyle(.bordered).controlSize(.regular).font(.system(size: 12, weight: Font.Weight.bold)).foregroundColor(Color.black)
+                                        Button("Black"){ }.buttonStyle(.bordered).controlSize(.regular).font(.system(size: 12, weight: Font.Weight.bold)).foregroundColor(Color.black)
+                                        Text("Mix Count")
+                                            .font(.headline)
+                                        RoundedRectangle(cornerRadius: 12)
+                                            .fill(Color(red: 220/255, green: 220/255, blue: 220/255))
+                                            .frame(width: 140, height: 32)
+                                        
+                                    }
+                                }.padding()
+                            )
+                    }
+                    Spacer().frame(width: 32)
+                }
+                Spacer().frame(height: 32).edgesIgnoringSafeArea(.bottom)
             }
             
-            
-            //Color Picker 기능
-            ColorPicker(" ", selection: $selectedColor)
-                .frame(width: 200, height: 200)
-                .background(RoundedCorners(color: selectedColor, tl: 200, tr: 200, bl: 200, br: 200))
-            
-            
-            
-            //텍스트
-            Text("Import Image")
-                .foregroundColor(.black).font(.title).padding(15)
-                .background(RoundedCorners(color: .green, tr: 30, bl: 30))
-            
-            Text("Oreo")
-                .foregroundColor(.black).font(.title).padding(15)
-                .background(RoundedCorners(color: .blue, tl: 30, br: 30))
-            
-        }.padding(20).border(Color.gray).shadow(radius: 3)
+            VStack {
+                Spacer().frame(height: 32).edgesIgnoringSafeArea(.top)
+                
+                HStack(alignment: .top){
+                    Rectangle()
+                        .fill(Color.clear)
+                        .frame(minWidth: 464, idealWidth: 464, maxWidth: 464, minHeight: 770, idealHeight: 770, maxHeight: nil, alignment: .top)
+                    Rectangle()
+                        .fill(Color.clear)
+                        .frame(minWidth: 698, idealWidth: 698, maxWidth: nil, minHeight: 300, idealHeight: 300, maxHeight: 300, alignment: .top)
+                        .background(RoundedCorners(color: .white, tl: 150, tr: 0, bl: 150, br: 0))
+                        .shadow(color: .black.opacity(0.5), radius: 10, x: 10, y: 10)
+                        .overlay(
+                            HStack(alignment: .bottom) {
+                                Circle().fill(Color.yellow).frame(width: 268, height: 268).padding()
+                                
+                                VStack(alignment: .leading) {
+                                    Text("This is The Title").font(.largeTitle).bold().padding(EdgeInsets(top: 32, leading: 0, bottom: 0, trailing: 32))
+                                    Spacer()
+                                    Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consectetur lorem at consequat porttitor. Nam auctor turpis et purus cursus vehicula quis et magna. Sed non risus nec quam molestie congue eu et neque. Suspendisse ipsum est, maximus a luctus vel, maximus vel libero. Nullam malesuada fringilla massa, a pellentesque tellus tristique at. Sed a facilisis dolor.").font(.body).lineLimit(8).padding(EdgeInsets(top: 0, leading: 0, bottom: 32, trailing: 16))
+                                }
+                            })
+                }
+            }
+        }
+        
     }
 }
 
@@ -80,35 +147,8 @@ struct RoundedCorners: View {
     }
 }
 
-
-/* Geometry 개념 익히기
- 
- struct ContentView: View {
- var body: some View {
- VStack {
- Text("Hello")
- RightView()
- }.frame(width: 150, height: 100).border(Color.black)
- .frame(width: 170, height: 120).border(Color.black)
- }
- }
- 
- struct RightView: View {
- var body: some View {
- GeometryReader { geometry in
- VStack {
- Rectangle()
- .path(in: CGRect(x: geometry.size.width + 0, y:0, width: geometry.size.width / 2.0, height: geometry.size.height / 2.0))
- .foregroundColor(.blue)
- }
- }
- }
- }
- 
- struct ContentView_Previews: PreviewProvider {
- static var previews: some View {
- ContentView()
- }
- }
- 
- */
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
