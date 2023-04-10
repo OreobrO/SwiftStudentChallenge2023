@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct QuizView: View {
+    
+    @EnvironmentObject
+    var globalStore: GlobalStore
+    
     var body: some View {
         
         VStack {
@@ -22,13 +26,26 @@ struct QuizView: View {
                         VStack(alignment: .leading) {
                             Text("Drawing Board")
                                 .font(.headline)
-                            ColorPickerView()
+                            HStack(alignment: .top) {
+                                Rectangle()
+                                Rectangle()
+                                Rectangle()
+                                Rectangle()
+                            }.frame(width: .infinity, height: 60)
+                            HStack(alignment: .top) {
+                                ColorPickerView()
+                                ColorPickerView()
+                                ColorPickerView()
+                                ColorPickerView()
+                            }
                             Spacer().frame(height: 16)
                             
                             HStack (alignment: .bottom) {
-                                Button("Reset"){ }.buttonStyle(.bordered).controlSize(.large).font(.system(size: 16, weight: Font.Weight.bold)).foregroundColor(Color.black)
+                                Button("Reset"){
+                                    globalStore.doReset()                               }.buttonStyle(.bordered).controlSize(.large).font(.system(size: 16, weight: Font.Weight.bold)).foregroundColor(Color.black)
                                 Button("Submit"){ }.buttonStyle(.bordered).controlSize(.large).font(.system(size: 16, weight: Font.Weight.bold)).foregroundColor(Color.black)
                             }
+                                
                         }
                         Spacer().frame(width: 16)
                         

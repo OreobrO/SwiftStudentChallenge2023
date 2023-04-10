@@ -9,6 +9,9 @@ import SwiftUI
 
 struct ColorPickerView: View {
     
+    @EnvironmentObject
+    var globalStore: GlobalStore
+    
     let radius: CGFloat = 100
     var diameter: CGFloat {
         radius * 2
@@ -16,7 +19,7 @@ struct ColorPickerView: View {
     
     @State private var startLocation: CGPoint?
     @State private var location: CGPoint?
-    @State private var bgColor = Color.green
+    @State private var bgColor = Color.gray
     
     var body: some View {
         ZStack {
@@ -38,23 +41,25 @@ struct ColorPickerView: View {
                         ]), center: .center))
                     .frame(width: diameter, height: diameter)
                     .overlay(
-                    Circle()
-                        .fill(
-                            RadialGradient(gradient: Gradient(colors: [
-                                Color.white, Color.white.opacity(0.000001)
+                        Circle()
+                            .fill(
+                                RadialGradient(gradient: Gradient(colors: [
+                                    Color.white, Color.white.opacity(0.000001)
                                 ]), center: .center, startRadius: 0, endRadius: radius)
-                        )
+                            )
                     )
                     .position(startLocation!)
                     .shadow(color: Color.black.opacity(0.1), radius: 6, y: 8)
                 
                 Circle()
-                    .frame(width: 30, height: 30)
+                    .frame(width: 15, height: 15)
                     .position(location!)
                     .foregroundColor(.black)
             }
+            
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .zIndex(0)
         .background(bgColor)
         .gesture(dragGesture)
     }
@@ -94,20 +99,20 @@ struct ColorPickerView: View {
                 
                 let hue = angle.degrees / 360
                 let saturation = Double(distance / radius)
-                bgColor = Color(hue: hue, saturation: saturation, brightness: 0.5)
+                bgColor = Color(hue: hue, saturation: saturation, brightness: 1.0)
+            }
+        
+            .onEnded { val in
+                startLocation = nil
+                location = nil
+                print(bgColor)
                 
             }
-                .onEnded { val in
-                        startLocation = nil
-                        location = nil
-                    print(bgColor)
-                    }
-            }
     }
-        
     
-    struct ColorPickerView_Previews: PreviewProvider {
-        static var previews: some View {
-            ColorPickerView()
-        }
+}
+struct ColorPickerView_Previews: PreviewProvider {
+    static var previews: some View {
+        ColorPickerView()
     }
+}
