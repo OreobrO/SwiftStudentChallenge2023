@@ -3,14 +3,16 @@ import SwiftUI
 struct ContentView : View {
     
     var body: some View {
-        
+     
+    
+
         ZStack {
             Rectangle()
                 .fill(Color(red: 220/255, green: 220/255, blue: 220/255))
-            
+
             VStack {
                 Spacer().frame(height: 32).edgesIgnoringSafeArea(.top)
-                
+
                 HStack(alignment: .top) {
                     Spacer().frame(width: 32)
                     Rectangle()
@@ -19,7 +21,11 @@ struct ContentView : View {
                         .edgesIgnoringSafeArea(.all)
                         .overlay(
                             VStack (alignment: .leading) {
-                                Rectangle().fill(Color(red: 220/255, green: 220/255, blue: 220/255)).frame(height: 552).padding(EdgeInsets(top: 16, leading: 16, bottom: 0, trailing: 16))
+                                Image("Image_002")
+                                    .resizable()
+                                    .frame(width: 368, height: 552)
+                                    .scaledToFill()
+                                    .padding(EdgeInsets(top: 16, leading: 16, bottom: 0, trailing: 16))
                                 Text("NameofArtist \nThisIs TheTitleOfArt(1919)").font(.headline).bold().padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
                                 Text("Oil paint on canvas").font(.body).padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
                                 Spacer()
@@ -30,59 +36,16 @@ struct ContentView : View {
                                 }
                             })
                     Spacer().frame(width: 32)
-                    
-                    VStack {
-                        Spacer().frame(height: 332)
-                        RoundedRectangle(cornerRadius: 24)
-                            .fill(Color.white)
-                            .frame(minWidth: 698, idealWidth: 698, maxWidth: nil, minHeight: 438, idealHeight: 438, maxHeight: nil, alignment: .bottomTrailing)
-                            .overlay(
-                                HStack(alignment: .top) {
-                                    
-                                    VStack(alignment: .leading) {
-                                        Text("Drawing Board")
-                                            .font(.headline)
-                                        RoundedRectangle(cornerRadius: 16)
-                                            .fill(Color(red: 220/255, green: 220/255, blue: 220/255))
-                                        Spacer().frame(height: 16)
-                                        
-                                        HStack (alignment: .bottom) {
-                                            Button("Reset"){ }.buttonStyle(.bordered).controlSize(.large).font(.system(size: 16, weight: Font.Weight.bold)).foregroundColor(Color.black)
-                                            Button("Submit"){ }.buttonStyle(.bordered).controlSize(.large).font(.system(size: 16, weight: Font.Weight.bold)).foregroundColor(Color.black)
-                                        }
-                                    }
-                                    Spacer().frame(width: 16)
-                                    
-                                    VStack(alignment: .leading) {
-                                        Text("Match Color")
-                                            .font(.headline)
-                                        RoundedRectangle(cornerRadius: 12)
-                                            .fill(Color(red: 220/255, green: 220/255, blue: 220/255))
-                                            .frame(width: 140)
-                                        Text("Mix Color")
-                                            .font(.headline)
-                                        Button("Cyan"){ }.buttonStyle(.bordered).controlSize(.regular).font(.system(size: 12, weight: Font.Weight.bold)).foregroundColor(Color.black)
-                                        Button("Magenta"){ }.buttonStyle(.bordered).controlSize(.regular).font(.system(size: 12, weight: Font.Weight.bold)).foregroundColor(Color.black)
-                                        Button("Yellow"){ }.buttonStyle(.bordered).controlSize(.regular).font(.system(size: 12, weight: Font.Weight.bold)).foregroundColor(Color.black)
-                                        Button("Black"){ }.buttonStyle(.bordered).controlSize(.regular).font(.system(size: 12, weight: Font.Weight.bold)).foregroundColor(Color.black)
-                                        Text("Mix Count")
-                                            .font(.headline)
-                                        RoundedRectangle(cornerRadius: 12)
-                                            .fill(Color(red: 220/255, green: 220/255, blue: 220/255))
-                                            .frame(width: 140, height: 32)
-                                        
-                                    }
-                                }.padding()
-                            )
-                    }
+
+                    QuizView()
                     Spacer().frame(width: 32)
                 }
                 Spacer().frame(height: 32).edgesIgnoringSafeArea(.bottom)
             }
-            
+
             VStack {
                 Spacer().frame(height: 32).edgesIgnoringSafeArea(.top)
-                
+
                 HStack(alignment: .top){
                     Rectangle()
                         .fill(Color.clear)
@@ -95,7 +58,7 @@ struct ContentView : View {
                         .overlay(
                             HStack(alignment: .bottom) {
                                 Circle().fill(Color.yellow).frame(width: 268, height: 268).padding()
-                                
+
                                 VStack(alignment: .leading) {
                                     Text("This is The Title").font(.largeTitle).bold().padding(EdgeInsets(top: 32, leading: 0, bottom: 0, trailing: 32))
                                     Spacer()
@@ -105,12 +68,12 @@ struct ContentView : View {
                 }
             }
         }
-        
+
     }
 }
 
 //코너 라운드 기능
-
+//
 struct RoundedCorners: View {
     var color: Color = .black
     var tl: CGFloat = 0.0 // top-left radius parameter
