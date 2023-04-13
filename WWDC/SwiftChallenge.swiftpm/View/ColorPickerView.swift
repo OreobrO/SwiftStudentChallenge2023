@@ -59,8 +59,8 @@ struct ColorPickerView: View {
             
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(RoundedCorners(color: bgColor, tl: 24, tr: 24, bl: 90, br: 24))
         .zIndex(0)
-        .background(bgColor)
         .gesture(dragGesture)
     }
     
