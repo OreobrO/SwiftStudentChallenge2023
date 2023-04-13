@@ -29,6 +29,3 @@ struct ContentView : View {
         
     }
 }
-
-//코너 라운드 기능
-//
