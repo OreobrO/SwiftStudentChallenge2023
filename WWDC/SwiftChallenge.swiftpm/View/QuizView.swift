@@ -9,67 +9,14 @@ import SwiftUI
 
 struct QuizView: View {
     
-    @EnvironmentObject
-    var globalStore: GlobalStore
-    
     var body: some View {
         
-        VStack {
-            Spacer().frame(height: 332)
-            
-            RoundedRectangle(cornerRadius: 24)
-                .fill(Color.white)
-                .frame(minWidth: 698, idealWidth: 698, maxWidth: nil, minHeight: 438, idealHeight: 438, maxHeight: nil, alignment: .bottomTrailing)
-                .overlay(
-                    HStack(alignment: .top) {
-                        
-                        VStack(alignment: .leading) {
-                            Text("Drawing Board")
-                                .font(.headline)
-                            HStack(alignment: .top) {
-                                Rectangle()
-                                Rectangle()
-                                Rectangle()
-                                Rectangle()
-                            }.frame(width: .infinity, height: 60)
-                            HStack(alignment: .top) {
-                                ColorPickerView()
-                                ColorPickerView()
-                                ColorPickerView()
-                                ColorPickerView()
-                            }
-                            Spacer().frame(height: 16)
-                            
-                            HStack (alignment: .bottom) {
-                                Button("Reset"){
-                                    globalStore.doReset()                               }.buttonStyle(.bordered).controlSize(.large).font(.system(size: 16, weight: Font.Weight.bold)).foregroundColor(Color.black)
-                                Button("Submit"){ }.buttonStyle(.bordered).controlSize(.large).font(.system(size: 16, weight: Font.Weight.bold)).foregroundColor(Color.black)
-                            }
-                                
-                        }
-                        Spacer().frame(width: 16)
-                        
-                        VStack(alignment: .leading) {
-                            Text("Match Color")
-                                .font(.headline)
-                            RoundedRectangle(cornerRadius: 12)
-                                .fill(Color(red: 220/255, green: 220/255, blue: 220/255))
-                                .frame(width: 140)
-                            Text("Mix Color")
-                                .font(.headline)
-                            Button("Cyan"){ }.buttonStyle(.bordered).controlSize(.regular).font(.system(size: 12, weight: Font.Weight.bold)).foregroundColor(Color.black)
-                            Button("Magenta"){ }.buttonStyle(.bordered).controlSize(.regular).font(.system(size: 12, weight: Font.Weight.bold)).foregroundColor(Color.black)
-                            Button("Yellow"){ }.buttonStyle(.bordered).controlSize(.regular).font(.system(size: 12, weight: Font.Weight.bold)).foregroundColor(Color.black)
-                            Button("Black"){ }.buttonStyle(.bordered).controlSize(.regular).font(.system(size: 12, weight: Font.Weight.bold)).foregroundColor(Color.black)
-                            Text("Mix Count")
-                                .font(.headline)
-                            RoundedRectangle(cornerRadius: 12)
-                                .fill(Color(red: 220/255, green: 220/255, blue: 220/255))
-                                .frame(width: 140, height: 32)
-                            
-                        }
-                    }.padding()
-                )
+        ZStack {
+            Rectangle()
+                .fill(Color.clear)
+                .background(RoundedCorners(color: .white, tl: 40, tr: 0, bl: 40, br: 0))
+                .frame(minWidth: 480, idealWidth: 480, maxWidth: 480, minHeight: 802, idealHeight: 802, maxHeight: nil, alignment: .topTrailing)
+                .shadow(radius: 8, x: -8, y: 8)
         }
     }
 }

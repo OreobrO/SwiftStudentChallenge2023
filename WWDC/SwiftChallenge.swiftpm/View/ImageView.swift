@@ -10,29 +10,56 @@ import SwiftUI
 struct ImageView: View {
     var body: some View {
         
-        Rectangle()
-            .fill(Color.white)
-            .frame(minWidth: 400, idealWidth: 400, maxWidth: 400, minHeight: 770, idealHeight: 770, maxHeight: nil, alignment: .top)
-            .edgesIgnoringSafeArea(.all)
-            .overlay(
-                VStack (alignment: .leading) {
-                    Image("Image_002")
-                        .resizable()
-                        .frame(width: 368, height: 552)
-                        .scaledToFill()
-                        .padding(EdgeInsets(top: 16, leading: 16, bottom: 0, trailing: 16))
-                    Text("NameofArtist \nThisIs TheTitleOfArt(1919)").font(.headline).bold().padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
-                    Text("Oil paint on canvas").font(.body).padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
-                    Spacer()
-                    HStack(alignment: .bottom) {
-                        Spacer()
-                        Button("Previous"){ }.buttonStyle(.bordered).controlSize(.large).font(.system(size: 16, weight: Font.Weight.bold)).foregroundColor(Color.black).padding(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0))
-                        Button("Next"){ }.buttonStyle(.bordered).controlSize(.large).font(.system(size: 16, weight: Font.Weight.bold)).foregroundColor(Color.black).padding(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 16))
-                    }
-                })
+        VStack (alignment: .leading) {
+            Spacer().frame(height: 32)
+            //Button 1 at the top of VStack
+            Button("<  to Gallery"){ }.buttonStyle(.borderless).controlSize(.large).font(.body.bold()).foregroundColor(Color.black)
+            //Picture & PictureTitle View
+            HStack (alignment: .bottom) {
+                //Picture View
+                GeometryReader { geometry in
+                    Rectangle()
+                        .fill(Color.white)
+                        .frame(width: geometry.size.width, height: geometry.size.height)
+                        .overlay(
+                            Image("Image_002")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: geometry.size.width - 32, height: geometry.size.height - 32)
+                                .background(Color.white)
+                                .clipShape(Rectangle())
+                        )}
+                
+                Spacer().frame(width: 16)
+                //Picture Title View
+                Rectangle()
+                    .fill(Color.white)
+                    .frame(width: 220, height: 170)
+                    .overlay(
+                        HStack{
+                            VStack(alignment: .leading) {
+                                Text("Robert Delaunay").font(.body.bold()).padding(EdgeInsets(top: 16, leading: 12, bottom: 0, trailing: 10)).lineLimit(2)
+                                Text("Endless Rhythm(1934)").font(.body.bold()).padding(EdgeInsets(top: 0, leading: 12, bottom: 0, trailing: 10)).lineLimit(3)
+                                Text("Oil paint on canvas").font(.body).padding(EdgeInsets(top: 0, leading: 12, bottom: 0, trailing: 10)).lineLimit(2)
+                                Spacer()
+                            }
+                            Spacer()
+                        })
+                
+            }
+            Spacer().frame(height: 16)
+            //Button 2, 3 at the bottom of VStack
+            HStack(alignment: .bottom) {
+                //Button 2
+                Button("Previous"){ }.buttonStyle(.bordered).controlSize(.large).font(.body.bold()).foregroundColor(Color.black).background(Color.white).cornerRadius(10).padding(.trailing, 8)
+                //Button 3
+                Button("Next"){ }.buttonStyle(.bordered).controlSize(.large).font(.body.bold()).foregroundColor(Color.black).background(Color.white).cornerRadius(10)
+            }
             
         }
+        
     }
+}
 
 
 struct ImageView_Previews: PreviewProvider {

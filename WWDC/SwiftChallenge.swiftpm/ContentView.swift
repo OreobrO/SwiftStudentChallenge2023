@@ -9,21 +9,19 @@ struct ContentView : View {
         
         ZStack {
             Rectangle()
-                .fill(Color(red: 220/255, green: 220/255, blue: 220/255))
+                .fill(Color(red: 180/255, green: 180/255, blue: 180/255))
+                .edgesIgnoringSafeArea(.all)
             
             VStack {
-                Spacer().frame(height: 32).edgesIgnoringSafeArea(.top)
-                
-                HStack(alignment: .top) {
+//
+                HStack(alignment: .bottom) {
                     Spacer().frame(width: 32)
                     ImageView()
                     Spacer().frame(width: 32)
                     QuizView()
-                    Spacer().frame(width: 32)
                 }
-                Spacer().frame(height: 32).edgesIgnoringSafeArea(.bottom)
+            
             }
-            InfoView()
             
         }
         
