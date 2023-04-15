@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct ImageView: View {
+    var indexNum: Int
     var body: some View {
         
         VStack (alignment: .leading) {
-            Spacer().frame(height: 32)
-            //Button 1 at the top of VStack
-            Button("<  to Gallery"){ }.buttonStyle(.borderless).controlSize(.large).font(.body.bold()).foregroundColor(Color.black)
+            Spacer().frame(height: 64)
             //Picture & PictureTitle View
             HStack (alignment: .bottom) {
                 //Picture View
@@ -22,7 +21,7 @@ struct ImageView: View {
                         .fill(Color.white)
                         .frame(width: geometry.size.width, height: geometry.size.height)
                         .overlay(
-                            Image("Image_002")
+                            Image(info.image[indexNum])
                                 .resizable()
                                 .scaledToFill()
                                 .frame(width: geometry.size.width - 32, height: geometry.size.height - 32)
@@ -50,6 +49,6 @@ struct ImageView: View {
 
 struct ImageView_Previews: PreviewProvider {
     static var previews: some View {
-        ImageView()
+        ImageView(indexNum: 0)
     }
 }

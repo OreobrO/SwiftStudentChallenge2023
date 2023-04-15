@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ImageTitleView: View {
+    
+    var indexNum: Int
+    
     var body: some View {
         
         GeometryReader { geometry in
@@ -21,7 +24,7 @@ struct ImageTitleView: View {
                     .overlay(
                         HStack{
                             VStack(alignment: .leading) {
-                                Text("Robert Delaunay").font(.body.bold()).padding(EdgeInsets(top: 16, leading: 12, bottom: 0, trailing: 10)).lineLimit(2)
+                                Text(info.title[indexNum]).font(.body.bold()).padding(EdgeInsets(top: 16, leading: 12, bottom: 0, trailing: 10)).lineLimit(2)
                                 Text("Endless Rhythm(1934)").font(.body.bold()).padding(EdgeInsets(top: 0, leading: 12, bottom: 0, trailing: 10)).lineLimit(3)
                                 Text("Oil paint on canvas").font(.body).padding(EdgeInsets(top: 0, leading: 12, bottom: 0, trailing: 10)).lineLimit(2)
                                 Spacer()
@@ -37,6 +40,6 @@ struct ImageTitleView: View {
 
 struct ImageTitleView_Previews: PreviewProvider {
     static var previews: some View {
-        ImageTitleView()
+        ImageTitleView(indexNum: 0)
     }
 }
