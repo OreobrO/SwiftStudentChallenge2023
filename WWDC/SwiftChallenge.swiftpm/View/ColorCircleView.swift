@@ -1,5 +1,5 @@
 //
-//  ColorPickerView.swift
+//  ColorCircleView.swift
 //  SwiftChallenge
 //
 //  Created by 최민규 on 2023/04/10.
@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct ColorPickerView: View {
+struct ColorCircleView: View {
     
-    @EnvironmentObject
-    var globalStore: GlobalStore
+//    @EnvironmentObject
+//    var globalStore: GlobalStore
     
     let radius: CGFloat = 100
     var diameter: CGFloat {
@@ -50,17 +50,18 @@ struct ColorPickerView: View {
                     )
                     .position(startLocation!)
                     .shadow(color: Color.black.opacity(0.1), radius: 6, y: 8)
+//                    .zIndex(5)
                 
                 Circle()
                     .frame(width: 15, height: 15)
                     .position(location!)
                     .foregroundColor(.black)
+//                    .zIndex(10)
             }
             
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(RoundedCorners(color: bgColor, tl: 24, tr: 24, bl: 90, br: 24))
-        .zIndex(0)
+        .background(RoundedCorners(color: Color.white, tl: 24, tr: 24, bl: 90, br: 24))
         .gesture(dragGesture)
     }
     
@@ -111,8 +112,11 @@ struct ColorPickerView: View {
     }
     
 }
-struct ColorPickerView_Previews: PreviewProvider {
+struct ColorCircleView_Previews: PreviewProvider {
     static var previews: some View {
-        ColorPickerView()
+        ColorCircleView()
     }
 }
+
+//brightness를 바꿔야함
+

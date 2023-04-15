@@ -14,10 +14,10 @@ struct ImageTitleView: View {
             VStack {
                 Spacer()
                 //Picture Title View
-                Rectangle()
+                RoundedRectangle(cornerRadius: 8)
                     .fill(Color.white)
                     .frame(width: geometry.size.width, height: 170)
-                
+                    .opacity(0.6)
                     .overlay(
                         HStack{
                             VStack(alignment: .leading) {
