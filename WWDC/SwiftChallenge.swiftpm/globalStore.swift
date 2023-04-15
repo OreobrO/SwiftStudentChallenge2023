@@ -9,8 +9,11 @@ import Combine
 import SwiftUI
 
 class GlobalStore: ObservableObject {
+
     @Published var isReset = false
-    
+    @Published var colorGray0 = Color(red: 1.0, green: 1.0, blue: 1.0)
+    @Published var colorGray1 = Color(red: 0.95, green: 0.95, blue: 0.95)
+    @Published var colorGray2 = Color(red: 0.7, green: 0.7, blue: 0.7)
 }
 
 extension GlobalStore {

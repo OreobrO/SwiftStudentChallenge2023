@@ -16,5 +16,7 @@ struct ImagePopScene: View {
 struct ImagePopScene_Previews: PreviewProvider {
     static var previews: some View {
         ImagePopScene()
+            .previewDevice(PreviewDevice(rawValue: "iPad Pro (12.9-inch)"))
+            .previewInterfaceOrientation(.landscapeRight)
     }
 }
