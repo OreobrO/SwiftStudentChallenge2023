@@ -1,13 +1,6 @@
-//
-//  ColorPalleteView.swift
-//  SwiftChallenge
-//
-//  Created by 최민규 on 2023/04/10.
-//
-
 import SwiftUI
 
-struct ColorPalleteView: View {
+struct ColorPalleteView2: View {
     
     let globalStore = GlobalStore()
     let radius: CGFloat = 100
@@ -17,11 +10,12 @@ struct ColorPalleteView: View {
     
     @State private var startLocation: CGPoint?
     @State private var location: CGPoint?
-//    @State var bgColor = Color(red: 0.8, green: 0.8, blue: 0.8)
-    @Binding var bgColor: Color
+    @State var bgColor2: Color = Color(red: 0.8, green: 0.8, blue: 0.8)
     
     var body: some View {
         ZStack {
+            
+            //ColorPicker Circle
             if startLocation != nil {
                 Circle()
                     .fill(
@@ -46,6 +40,10 @@ struct ColorPalleteView: View {
                                     Color.white, Color.white.opacity(0.000001)
                                 ]), center: .center, startRadius: 0, endRadius: radius)
                             )
+                            .overlay(
+                        Circle()
+                            .strokeBorder(Color.white, lineWidth: 5))
+                            .frame(width: diameter + 10, height: diameter + 10)
                     )
                     .position(startLocation!)
                     .shadow(color: Color.black.opacity(0.1), radius: 6, y: 8)
@@ -60,7 +58,7 @@ struct ColorPalleteView: View {
             
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(RoundedCorners(color: bgColor, tl: 24, tr: 24, bl: 90, br: 24))
+        .background(RoundedCorners(color: bgColor2, tl: 24, tr: 24, bl: 90, br: 24))
         .gesture(dragGesture)
     }
     
@@ -99,21 +97,21 @@ struct ColorPalleteView: View {
                 
                 let hue = angle.degrees / 360
                 let saturation = Double(distance / radius)
-                bgColor = Color(hue: hue, saturation: saturation, brightness: 1.0)
+                bgColor2 = Color(hue: hue, saturation: saturation, brightness: 1.0)
             }
         
             .onEnded { val in
                 startLocation = nil
                 location = nil
-                print(bgColor)
+                print("bgColor2 = \(bgColor2)")
                 
             }
     }
     
 }
-//struct ColorPalleteView_Previews: PreviewProvider {
+//struct ColorPalleteView2_Previews: PreviewProvider {
 //    static var previews: some View {
-//        ColorPalleteView()
+//        ColorPalleteView2()
 //    }
 //}
 

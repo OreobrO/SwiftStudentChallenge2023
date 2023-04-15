@@ -14,6 +14,9 @@ class GlobalStore: ObservableObject {
     @Published var colorGray0 = Color(red: 1.0, green: 1.0, blue: 1.0)
     @Published var colorGray1 = Color(red: 0.95, green: 0.95, blue: 0.95)
     @Published var colorGray2 = Color(red: 0.7, green: 0.7, blue: 0.7)
+//    @Published var bgColor1 = Color(red: 0.8, green: 0.8, blue: 0.8)
+//    @Published var bgColor2 = Color(red: 0.8, green: 0.8, blue: 0.8)
+//    @Published var bgColor3 = Color(red: 0.8, green: 0.8, blue: 0.8)
 }
 
 

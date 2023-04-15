@@ -11,7 +11,9 @@ struct MatchColorView: View {
     
     let globalStore = GlobalStore()
     @Binding var indexNum: Int
-    @Binding var bgColor: Color
+//    @Binding var bgColor1: Color
+//    @Binding var bgColor2: Color
+//    @Binding var bgColor3: Color
     
     var body: some View {
         
@@ -38,7 +40,7 @@ struct MatchColorView: View {
                                         .padding(EdgeInsets(top: 24, leading: 0, bottom: 12, trailing: 0))
                                     
                                     //ColorPalleteView 1
-                                    ColorPalleteView(bgColor: $bgColor)
+                                    ColorPalleteView1()
                                         .frame(width: geometry.size.width * 0.5, height: nil)
                                         .overlay(
                                             Circle()
@@ -57,7 +59,7 @@ struct MatchColorView: View {
                                     Spacer().frame(height: 32)
                                     
                                     //ColorPalleteView 2
-                                    ColorPalleteView(bgColor: $bgColor)
+                                    ColorPalleteView2()
                                         .frame(width: geometry.size.width * 0.5, height: nil)
                                         .overlay(
                                             Circle()
@@ -76,7 +78,7 @@ struct MatchColorView: View {
                                     Spacer().frame(height: 32)
                                     
                                     //ColorPalleteView 3
-                                    ColorPalleteView(bgColor: $bgColor)
+                                    ColorPalleteView3()
                                         .frame(width: geometry.size.width * 0.5, height: nil)
                                         .overlay(
                                             Circle()
@@ -101,7 +103,12 @@ struct MatchColorView: View {
                             VStack(alignment: .leading) {
                                 
                                 Button("Redo"){ }.buttonStyle(.bordered).controlSize(.large).font(.body.bold()).foregroundColor(Color.black).background(Color.white).cornerRadius(10).padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
-                                Button("Done"){ }.buttonStyle(.bordered).controlSize(.large).font(.body.bold()).foregroundColor(Color.white).background(Color.gray).cornerRadius(10).padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                                Button("Done"){
+                                    print(indexNum)
+//                                    print("bgColor1 = \(bgColor1)")
+//                                    print("bgColor1 = \(bgColor2)")
+//                                    print("bgColor1 = \(bgColor3)")
+                                }.buttonStyle(.bordered).controlSize(.large).font(.body.bold()).foregroundColor(Color.white).background(Color.gray).cornerRadius(10).padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                                 Spacer().frame(height: 64)
                             }
                             Spacer()
