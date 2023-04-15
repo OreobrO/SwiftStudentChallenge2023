@@ -16,6 +16,7 @@ class GlobalStore: ObservableObject {
     @Published var colorGray2 = Color(red: 0.7, green: 0.7, blue: 0.7)
 }
 
+
 extension GlobalStore {
     func doReset() {
         isReset = true

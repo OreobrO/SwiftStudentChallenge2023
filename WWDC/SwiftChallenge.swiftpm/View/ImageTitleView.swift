@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ImageTitleView: View {
     
-var indexNum: Int
-
+    @Binding var indexNum: Int
+    
     var body: some View {
         
         GeometryReader { geometry in
@@ -38,8 +38,8 @@ var indexNum: Int
     }
 }
 
-struct ImageTitleView_Previews: PreviewProvider {
-    static var previews: some View {
-        ImageTitleView(indexNum: 0)
-    }
-}
+//struct ImageTitleView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ImageTitleView(indexNum: )
+//    }
+//}

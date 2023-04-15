@@ -11,6 +11,7 @@ struct MatchColorScene: View {
     
     let globalStore = GlobalStore()
     @State var indexNum: Int = 10
+    @State var bgColor: Color = Color(red: 0.8, green: 0.8, blue: 0.8)
     
     var body: some View {
         
@@ -22,11 +23,11 @@ struct MatchColorScene: View {
                 ZStack {
                     HStack(alignment: .bottom) {
                         Spacer().frame(width: 32)
-                        ImageView(indexNum: indexNum).frame(width: geometry.size.width * 0.38)
+                        ImageView(indexNum: $indexNum).frame(width: geometry.size.width * 0.38)
                         Spacer().frame(width: 8)
-                        ImageTitleView(indexNum: indexNum).frame(width: geometry.size.width * 0.18)
+                        ImageTitleView(indexNum: $indexNum).frame(width: geometry.size.width * 0.18)
                         Spacer().frame(width: 32)
-                        MatchColorView().frame(width: geometry.size.width * 0.44)
+                        MatchColorView(indexNum: $indexNum, bgColor: $bgColor).frame(width: geometry.size.width * 0.44)
                     }.edgesIgnoringSafeArea(.all)
                 
                 }
@@ -37,10 +38,10 @@ struct MatchColorScene: View {
     }
 }
 
-struct MatchColorScene_Previews: PreviewProvider {
-    static var previews: some View {
-        MatchColorScene()
-            .previewDevice(PreviewDevice(rawValue: "iPad Pro (12.9-inch)"))
-            .previewInterfaceOrientation(.landscapeRight)
-    }
-}
+//struct MatchColorScene_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MatchColorScene()
+//            .previewDevice(PreviewDevice(rawValue: "iPad Pro (12.9-inch)"))
+//            .previewInterfaceOrientation(.landscapeRight)
+//    }
+//}

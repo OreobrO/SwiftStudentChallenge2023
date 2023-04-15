@@ -9,6 +9,10 @@ import SwiftUI
 
 struct MatchColorView: View {
     
+    let globalStore = GlobalStore()
+    @Binding var indexNum: Int
+    @Binding var bgColor: Color
+    
     var body: some View {
         
         GeometryReader { geometry in
@@ -34,11 +38,11 @@ struct MatchColorView: View {
                                         .padding(EdgeInsets(top: 24, leading: 0, bottom: 12, trailing: 0))
                                     
                                     //ColorPalleteView 1
-                                    ColorPalleteView()
+                                    ColorPalleteView(bgColor: $bgColor)
                                         .frame(width: geometry.size.width * 0.5, height: nil)
                                         .overlay(
                                             Circle()
-                                                .fill(Color.red)
+                                                .fill(info.color1[indexNum])
                                                 .frame(width: 130, height: 130)
                                                 .shadow(color: .black, radius: 8, x: 6, y: 6)
                                                 .overlay(Circle().stroke(Color.white, lineWidth: 5))
@@ -53,11 +57,11 @@ struct MatchColorView: View {
                                     Spacer().frame(height: 32)
                                     
                                     //ColorPalleteView 2
-                                    ColorPalleteView()
+                                    ColorPalleteView(bgColor: $bgColor)
                                         .frame(width: geometry.size.width * 0.5, height: nil)
                                         .overlay(
                                             Circle()
-                                                .fill(Color.cyan)
+                                                .fill(info.color2[indexNum])
                                                 .frame(width: 130, height: 130)
                                                 .shadow(color: .black, radius: 8, x: 6, y: 6)
                                                 .overlay(Circle().stroke(Color.white, lineWidth: 5))
@@ -72,11 +76,11 @@ struct MatchColorView: View {
                                     Spacer().frame(height: 32)
                                     
                                     //ColorPalleteView 3
-                                    ColorPalleteView()
+                                    ColorPalleteView(bgColor: $bgColor)
                                         .frame(width: geometry.size.width * 0.5, height: nil)
                                         .overlay(
                                             Circle()
-                                                .fill(Color.green)
+                                                .fill(info.color3[indexNum])
                                                 .frame(width: 130, height: 130)
                                                 .shadow(color: .black, radius: 8, x: 6, y: 6)
                                                 .overlay(Circle().stroke(Color.white, lineWidth: 5))
@@ -108,11 +112,11 @@ struct MatchColorView: View {
 }
 
 
-struct MatchColorView_Previews: PreviewProvider {
-    static var previews: some View {
-        MatchColorView()
-    }
-}
+//struct MatchColorView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MatchColorView()
+//    }
+//}
 
 //    HStack{
 //        Spacer()

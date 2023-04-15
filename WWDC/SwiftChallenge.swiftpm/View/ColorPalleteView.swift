@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ColorPalleteView: View {
     
+    let globalStore = GlobalStore()
     let radius: CGFloat = 100
     var diameter: CGFloat {
         radius * 2
@@ -16,7 +17,8 @@ struct ColorPalleteView: View {
     
     @State private var startLocation: CGPoint?
     @State private var location: CGPoint?
-    @State private var bgColor = Color.gray
+//    @State var bgColor = Color(red: 0.8, green: 0.8, blue: 0.8)
+    @Binding var bgColor: Color
     
     var body: some View {
         ZStack {
@@ -109,10 +111,10 @@ struct ColorPalleteView: View {
     }
     
 }
-struct ColorPalleteView_Previews: PreviewProvider {
-    static var previews: some View {
-        ColorPalleteView()
-    }
-}
+//struct ColorPalleteView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ColorPalleteView()
+//    }
+//}
 
 //brightness를 바꿔야함

@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ImageView: View {
-    @State var indexNum: Int
-
+    @Binding var indexNum: Int
+    
     var body: some View {
         
         VStack (alignment: .leading) {
@@ -38,10 +38,14 @@ struct ImageView: View {
                 //Button 2
                 Button("Previous"){
                    indexNum = (indexNum + info.image.count - 1) % info.image.count
+                    
+                    print("\(indexNum)")
                 }.buttonStyle(.bordered).controlSize(.large).font(.body.bold()).foregroundColor(Color.black).background(Color.white).cornerRadius(10).padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 8))
                 //Button 3
                 Button("Next"){
                     indexNum = (indexNum + 1) % info.image.count
+                   
+                    print("\(indexNum)")
                 }.buttonStyle(.bordered).controlSize(.large).font(.body.bold()).foregroundColor(Color.black).background(Color.white).cornerRadius(10).padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
             }
             Spacer().frame(height: 32)
@@ -52,8 +56,8 @@ struct ImageView: View {
 }
 
 
-struct ImageView_Previews: PreviewProvider {
-    static var previews: some View {
-        ImageView(indexNum: 0)
-    }
-}
+//struct ImageView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ImageView(indexNum: 0)
+//    }
+//}
