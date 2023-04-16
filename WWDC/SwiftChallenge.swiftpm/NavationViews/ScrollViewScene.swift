@@ -22,7 +22,7 @@ struct ScrollViewScene: View {
                         startRadius: 200,
                         endRadius: 1000))
                     .edgesIgnoringSafeArea(.all)
-                
+            
                 VStack {
                     ScrollView(.horizontal) {
                         HStack {

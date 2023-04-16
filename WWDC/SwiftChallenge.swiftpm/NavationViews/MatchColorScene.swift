@@ -13,11 +13,16 @@ struct MatchColorScene: View {
     @State var indexNum: Int = 10
     @State private var popUpToggle: Bool = false
     
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .center) {
                 Rectangle()
-                    .fill(globalStore.colorGray2)
+                    .fill(RadialGradient(
+                        gradient: Gradient(colors: [globalStore.colorGray2, globalStore.colorGray0]),
+                        center: .bottom,
+                        startRadius: 500,
+                        endRadius: 1500))
                     .edgesIgnoringSafeArea(.all)
                 ZStack {
                     HStack(alignment: .bottom) {

@@ -13,7 +13,7 @@ struct ImageView: View {
     var body: some View {
         
         VStack (alignment: .leading) {
-            Spacer().frame(height: 64)
+            Spacer().frame(height: 96)
             //Picture & PictureTitle View
             HStack (alignment: .bottom) {
                 //Picture View
@@ -38,7 +38,7 @@ struct ImageView: View {
                 //Button 2
                 Button("Previous"){
                    indexNum = (indexNum + info.image.count - 1) % info.image.count
-                    
+                
                     print("\(indexNum)")
                 }.buttonStyle(.bordered).controlSize(.large).font(.body.bold()).foregroundColor(Color.black).background(Color.white).cornerRadius(10).padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 8))
                 //Button 3

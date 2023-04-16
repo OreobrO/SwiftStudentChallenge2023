@@ -20,11 +20,7 @@ class GlobalStore: ObservableObject {
 }
 
 
-extension GlobalStore {
-    func doReset() {
-        isReset = true
-    }
-}
+
 
 struct RoundedCorners: View {
     var color: Color = .black

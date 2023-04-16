@@ -60,6 +60,12 @@ struct ColorPalleteView3: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(RoundedCorners(color: bgColor3, tl: 24, tr: 24, bl: 90, br: 24))
         .gesture(dragGesture)
+        .overlay(
+            Text("Very Good")
+                .font(.largeTitle.bold())
+                .foregroundColor(Color.white)
+                .offset(y: 50)
+            )
     }
     
     var dragGesture: some Gesture {

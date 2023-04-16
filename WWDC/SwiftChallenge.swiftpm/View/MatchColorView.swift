@@ -41,7 +41,7 @@ struct MatchColorView: View {
                                         .padding(EdgeInsets(top: 24, leading: 0, bottom: 12, trailing: 0))
                                     
                                     //ColorPalleteView 1
-                                    ColorPalleteView1()
+                                    ColorPalleteView1(indexNum: $indexNum)
                                         .frame(width: geometry.size.width * 0.5, height: nil)
                                         .overlay(
                                             Circle()
