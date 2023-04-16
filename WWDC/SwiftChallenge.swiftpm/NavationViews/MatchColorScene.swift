@@ -13,12 +13,11 @@ struct MatchColorScene: View {
     @State var indexNum: Int = 10
     
     var body: some View {
-        
-        ZStack {
-            Rectangle()
-                .fill(globalStore.colorGray2)
-                .edgesIgnoringSafeArea(.all)
-            GeometryReader { geometry in
+        GeometryReader { geometry in
+            ZStack {
+                Rectangle()
+                    .fill(globalStore.colorGray2)
+                    .edgesIgnoringSafeArea(.all)
                 ZStack {
                     HStack(alignment: .bottom) {
                         Spacer().frame(width: 32)
@@ -28,11 +27,11 @@ struct MatchColorScene: View {
                         Spacer().frame(width: 32)
                         MatchColorView(indexNum: $indexNum).frame(width: geometry.size.width * 0.44)
                     }.edgesIgnoringSafeArea(.all)
-                
                 }
-            }
-        }
-        
+                
+                DetailPopUpView(indexNum: $indexNum)
+            }//ZStack
+        }//Geometry Reader
         
     }
 }

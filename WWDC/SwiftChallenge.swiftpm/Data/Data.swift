@@ -16,9 +16,9 @@ struct Info {
     let color1: [Color]
     let color2: [Color]
     let color3: [Color]
-    let popImage: [String]
-    let popTitle: [String]
-    let popDetail: [String]
+    let PopImage: [String]
+    let PopTitle: [String]
+    let PopDetail: [String]
     
 }
 
@@ -48,9 +48,9 @@ struct Info {
             Color(red: 0/255, green: 255/255, blue: 255/255),
             Color(red: 150/255, green: 150/255, blue: 150/255),
         ],
-        popImage: ["popImage_001", "popImage_002", "popImage_003", "popImage_004", "popImage_005"],
-        popTitle: ["popTitle_001", "popTitle_002", "popTitle_003", "popTitle_004", "popTitle_005"],
-        popDetail: ["popDetail_001", "popDetail_002", "popDetail_003", "popDetail_004", "popDetail_005"]
+        PopImage: ["PopImage_001", "PopImage_002", "PopImage_003", "PopImage_004", "PopImage_005"],
+        PopTitle: ["PopTitle_001", "PopTitle_002", "PopTitle_003", "PopTitle_004", "PopTitle_005"],
+        PopDetail: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consectetur lorem at consequat porttitor. Nam auctor turpis et purus cursus vehicula quis et magna. Sed non risus nec quam molestie congue eu et neque. Suspendisse ipsum est, maximus a luctus vel, maximus vel libero. Nullam malesuada fringilla massa, a pellentesque tellus tristique at. Sed a facilisis dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consectetur lorem at consequat porttitor. Nam auctor turpis et purus cursus vehicula quis et magna. Sed non risus nec quam molestie congue eu et neque. Suspendisse ipsum est, maximus a luctus vel, maximus vel libero. Nullam malesuada fringilla massa, a pellentesque tellus tristique at. Sed a facilisis dolor.  ", "PopDetail_002", "PopDetail_003", "PopDetail_004", "PopDetail_005"]
     )
     
     
