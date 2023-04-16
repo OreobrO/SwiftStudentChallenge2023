@@ -11,6 +11,7 @@ struct MatchColorView: View {
     
     let globalStore = GlobalStore()
     @Binding var indexNum: Int
+    @Binding var popUpToggle: Bool
 //    @Binding var bgColor1: Color
 //    @Binding var bgColor2: Color
 //    @Binding var bgColor3: Color
@@ -108,7 +109,12 @@ struct MatchColorView: View {
 //                                    print("bgColor1 = \(bgColor1)")
 //                                    print("bgColor1 = \(bgColor2)")
 //                                    print("bgColor1 = \(bgColor3)")
-                                }.buttonStyle(.bordered).controlSize(.large).font(.body.bold()).foregroundColor(Color.white).background(Color.gray).cornerRadius(10).padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                                        popUpToggle = true
+                                    }
+                                    
+                                }.buttonStyle(.bordered).controlSize(.large).font(.body.bold()).foregroundColor(Color.white).background(LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.5), Color.blue.opacity(0.8)]), startPoint: .top, endPoint: .bottom)).cornerRadius(10).padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                                
                                 Spacer().frame(height: 64)
                             }
                             Spacer()

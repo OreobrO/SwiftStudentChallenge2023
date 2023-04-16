@@ -22,7 +22,7 @@ struct IntroScene: View {
                 .edgesIgnoringSafeArea(.all)
             Text("Gallery of What We See")
                 .font(.system(size: 80)).fontWeight(.bold).foregroundColor(.black)
-                .offset(y: -30)
+                .offset(y: -20)
         }.edgesIgnoringSafeArea(.all)
     }
 }

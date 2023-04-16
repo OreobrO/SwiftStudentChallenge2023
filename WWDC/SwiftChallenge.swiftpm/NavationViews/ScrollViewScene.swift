@@ -12,46 +12,48 @@ struct ScrollViewScene: View {
     let globalStore = GlobalStore()
     
     var body: some View {
-        
-        ZStack {
-            
-            Rectangle()
-                .fill(RadialGradient(
-                    gradient: Gradient(colors: [globalStore.colorGray2, globalStore.colorGray0]),
-                    center: .bottom,
-                    startRadius: 200,
-                    endRadius: 1000))
-                .edgesIgnoringSafeArea(.all)
-            
-            VStack {
-                ScrollView(.horizontal) {
-                    HStack {
-                        ForEach(0 ..< info.image.count , id: \.self) { i in
-                            NavigationLink(destination: MatchColorScene(indexNum: i))
-                            {
-                                VStack {
-                                    Image(info.image[i])
-                                        .resizable()
-                                        .scaledToFill()
-                                        .frame(width: 240, height: 320)
-                                        .shadow(radius: 10, x: 10, y: 10)
-                                        .padding()
-                                    Text(info.title[i])
-                                        .padding()
-                                    Spacer()
-                                }
-                            }.navigationTitle("Gallery")
-                        }
-                    }//HStack
-                }//ScrollView
+        GeometryReader { geometry in
+            ZStack {
                 
-                Text("Choose Image from the Gallery")
-                    .font(.system(size: 80)).fontWeight(.bold).foregroundColor(.black)
-                    .offset(y: -30)
-                    .padding()
-            }//VStack
-            
-        } //ZStack
+                Rectangle()
+                    .fill(RadialGradient(
+                        gradient: Gradient(colors: [globalStore.colorGray2, globalStore.colorGray0]),
+                        center: .bottom,
+                        startRadius: 200,
+                        endRadius: 1000))
+                    .edgesIgnoringSafeArea(.all)
+                
+                VStack {
+                    ScrollView(.horizontal) {
+                        HStack {
+                            ForEach(0 ..< info.image.count , id: \.self) { i in
+                                NavigationLink(destination: MatchColorScene(indexNum: i))
+                                {
+                                    VStack {
+                                        Image(info.image[i])
+                                            .resizable()
+                                            .scaledToFill()
+                                            .frame(width: geometry.size.width / 5, height: geometry.size.height / 2)
+                                            .shadow(radius: 10, x: 10, y: 10)
+                                            .padding()
+                                        Text(info.title[i])
+                                            .font(.title3).fontWeight(.medium).foregroundColor(.black)
+                                            .padding(.top, 0)
+                                        Spacer()
+                                    }
+                                }.navigationTitle("Gallery")
+                            }.padding()
+                        }.padding(EdgeInsets(top: 30, leading: 100, bottom: 0, trailing: 100))//HStack
+                    }//ScrollView
+                    
+                    Text("Choose Image from the Gallery")
+                        .font(.system(size: 80)).fontWeight(.bold).foregroundColor(.black)
+                        .offset(y: -30)
+                        .padding()
+                }//VStack
+                
+            } //ZStack
+        }//Geometry Reader
     }
 }
 

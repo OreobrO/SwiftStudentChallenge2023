@@ -11,6 +11,7 @@ struct MatchColorScene: View {
     
     let globalStore = GlobalStore()
     @State var indexNum: Int = 10
+    @State private var popUpToggle: Bool = false
     
     var body: some View {
         GeometryReader { geometry in
@@ -25,11 +26,17 @@ struct MatchColorScene: View {
                         Spacer().frame(width: 8)
                         ImageTitleView(indexNum: $indexNum).frame(width: geometry.size.width * 0.18)
                         Spacer().frame(width: 32)
-                        MatchColorView(indexNum: $indexNum).frame(width: geometry.size.width * 0.44)
+                        MatchColorView(indexNum: $indexNum, popUpToggle: $popUpToggle).frame(width: geometry.size.width * 0.44)
                     }.edgesIgnoringSafeArea(.all)
                 }.edgesIgnoringSafeArea(.all) //ZStack
-                DetailPopUpView(indexNum: $indexNum)
-                    
+                
+           
+                    DetailPopUpView(indexNum: $indexNum, popUpToggle: $popUpToggle)
+                        .opacity(popUpToggle ? 1 : 0)
+                        .animation(.easeInOut(duration: 0.2))
+                        .onAppear()
+
+                
             }.edgesIgnoringSafeArea(.all) //ZStack
         }//Geometry Reader
         

@@ -11,17 +11,19 @@ struct DetailPopUpView: View {
     
     let globalStore = GlobalStore()
     @Binding var indexNum: Int
+    @Binding var popUpToggle: Bool
     
     var body: some View {
         
         GeometryReader { geometry in
             Rectangle()
                 .fill(Color.black)
-                .opacity(0.2)
+                .opacity(0.5)
                 .edgesIgnoringSafeArea(.all)
                 .onTapGesture {
+                popUpToggle = false
                     print("close")
-                }
+                } //click outside pop up -> close pop up
             
             ZStack() {
                 RoundedRectangle(cornerRadius: 60)
@@ -75,12 +77,17 @@ struct DetailPopUpView: View {
                             Text(info.PopDetail[indexNum])
                                 .font(.body).fontWeight(.light).foregroundColor(.black)
                                 .multilineTextAlignment(.center)
-                                .frame(width: 500, alignment: .top)
+                                .frame(width: 500, height: 160, alignment: .top)
                                 .lineLimit(7)
+                                .border(Color.black)
                             
                             Spacer().frame(height: 30)
                             Button(action: {
-                                print("Next Clicked")
+                                popUpToggle = false
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                    indexNum = (indexNum + 1) % info.image.count}
+                                print("\(indexNum)")
+                                
                             }) {
                                 Text("Next")
                                     .font(.body.bold())

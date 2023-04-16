@@ -24,7 +24,7 @@ struct ConceptScene: View {
                     .edgesIgnoringSafeArea(.all)
                 Text("This is the Concept")
                     .font(.system(size: 80)).fontWeight(.bold).foregroundColor(.black)
-                    .offset(y: -30)
+                    .offset(y: -60)
                 
             }
         }
