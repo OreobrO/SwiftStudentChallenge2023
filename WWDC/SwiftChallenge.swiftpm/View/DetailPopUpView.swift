@@ -12,6 +12,7 @@ struct DetailPopUpView: View {
     @EnvironmentObject var globalStore: GlobalStore
     @Binding var indexNum: Int
     @Binding var popUpToggle: Bool
+    @Binding var endingToggle: Bool
     
     var body: some View {
         
@@ -84,11 +85,13 @@ struct DetailPopUpView: View {
                             Button(action: {
                                 popUpToggle = false
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                    indexNum = (indexNum + 1) % info.image.count
+                                    indexNum += indexNum == info.image.count - 1 ? 0 : 1
+//                                    indexNum = (indexNum + 1) % info.image.count
                                     globalStore.bgColor1 = globalStore.bgColor0
                                     globalStore.bgColor2 = globalStore.bgColor0
                                     globalStore.bgColor3 = globalStore.bgColor0
                                     globalStore.score = ["", "", ""]
+                                   
                                 }
                                 print("Next")
                                 print("\(indexNum)")

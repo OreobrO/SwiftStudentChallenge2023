@@ -12,6 +12,7 @@ struct MatchColorScene: View {
     @EnvironmentObject var globalStore: GlobalStore
     @State var indexNum: Int = 10
     @State private var popUpToggle: Bool = false
+    @State private var endingToggle: Bool = false
     
     var body: some View {
         GeometryReader { geometry in
@@ -30,14 +31,17 @@ struct MatchColorScene: View {
                         Spacer().frame(width: 8)
                         ImageTitleView(indexNum: $indexNum).frame(width: geometry.size.width * 0.18)
                         Spacer().frame(width: 32)
-                        MatchColorView(indexNum: $indexNum, popUpToggle: $popUpToggle).frame(width: geometry.size.width * 0.44)
+                        MatchColorView(indexNum: $indexNum, popUpToggle: $popUpToggle, endingToggle: $endingToggle).frame(width: geometry.size.width * 0.44)
                     }.edgesIgnoringSafeArea(.all)
                 }.edgesIgnoringSafeArea(.all) //ZStack
                 
-           
-                    DetailPopUpView(indexNum: $indexNum, popUpToggle: $popUpToggle)
+                DetailPopUpView(indexNum: $indexNum, popUpToggle: $popUpToggle, endingToggle: $endingToggle)
                         .opacity(popUpToggle ? 1 : 0)
                         .animation(.easeInOut(duration: 0.5))
+                        .onAppear()
+                    EndingScene()
+                        .opacity(endingToggle ? 1 : 0)
+                        .animation(.easeInOut(duration: 1))
                         .onAppear()
 
                 

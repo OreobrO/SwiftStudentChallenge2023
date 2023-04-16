@@ -18,7 +18,7 @@ struct ImageTitleView: View {
             VStack {
                 Spacer()
                 //Picture Title View
-                RoundedRectangle(cornerRadius: 8)
+                RoundedRectangle(cornerRadius: 0)
                     .fill(Color.white)
                     .frame(width: geometry.size.width, height: 170)
                     .opacity(0.6)
