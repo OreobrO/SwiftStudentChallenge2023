@@ -9,7 +9,9 @@ import SwiftUI
 
 struct MatchColorView: View {
     
-    let globalStore = GlobalStore()
+    @EnvironmentObject
+    var globalStore: GlobalStore
+    
     @Binding var indexNum: Int
     @Binding var popUpToggle: Bool
 //    @Binding var bgColor1: Color
@@ -30,9 +32,10 @@ struct MatchColorView: View {
                     .frame(width: geometry.size.width, height: geometry.size.height - 64)
                     .shadow(radius: 12, x: -12, y: 12)
                     .overlay(
-                        HStack(alignment: .bottom) {
-                            Spacer().frame(width: 40)
-                            
+                 
+                            HStack(alignment: .bottom) {
+                                Spacer().frame(width: 40)
+                                
                                 VStack(alignment: .leading) {
                                     //Text "Match Colors"
                                     Text("Match Colors")
@@ -75,7 +78,7 @@ struct MatchColorView: View {
                                                 .foregroundColor(Color.black)
                                                 .opacity(0.3)
                                                 .offset(x: -geometry.size.width * 0.14, y: -geometry.size.height * 0.085))
-                                        
+                                    
                                     Spacer().frame(height: 32)
                                     
                                     //ColorPalleteView 3
@@ -99,31 +102,35 @@ struct MatchColorView: View {
                                     
                                 }
                                 
-            
-                            Spacer().frame(width: geometry.size.width * 0.08)
-                            VStack(alignment: .leading) {
                                 
-                                Button("Redo"){
-                                    globalStore.bgColor1 = Color.white
-                                    globalStore.bgColor2 = Color.white
-                                    globalStore.bgColor3 = Color.white
-                                    print("redo")
-                                }.buttonStyle(.bordered).controlSize(.large).font(.body.bold()).foregroundColor(Color.black).background(Color.white).cornerRadius(10).padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
-                                Button("Done"){
-                                    print(indexNum)
-                                    print("globalStore.bgColor1 = \(globalStore.bgColor1)")
-                                    print("globalStore.bgColor1 = \(globalStore.bgColor2)")
-                                    print("globalStore.bgColor1 = \(globalStore.bgColor3)")
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                                        popUpToggle = true
-                                    }
+                                Spacer().frame(width: geometry.size.width * 0.08)
+                                VStack(alignment: .leading) {
                                     
-                                }.buttonStyle(.bordered).controlSize(.large).font(.body.bold()).foregroundColor(Color.white).background(LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.5), Color.blue.opacity(0.8)]), startPoint: .top, endPoint: .bottom)).cornerRadius(10).padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-                                
-                                Spacer().frame(height: 64)
-                            }
-                            Spacer()
-                        })
+                                    Button("Redo"){
+                                        globalStore.bgColor1 = globalStore.bgColor0
+                                        globalStore.bgColor2 = globalStore.bgColor0
+                                        globalStore.bgColor3 = globalStore.bgColor0
+                                        globalStore.score = ["", "", ""]
+                                        print("Redo")
+                                    }.buttonStyle(.bordered).controlSize(.large).font(.body.bold()).foregroundColor(Color.black).background(Color.white).cornerRadius(10).padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
+                                    
+                                    Button("Done"){
+                                        print(globalStore.isScoreActive)
+                                        globalStore.compareColorScore(currentIndex: indexNum)
+//                                        info 와 globalStore의 값 비교하기
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                                            popUpToggle = true
+                                        }
+                                        
+                                    }.buttonStyle(.bordered).controlSize(.large).font(.body.bold()).foregroundColor(Color.white).background(LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.5), Color.blue.opacity(0.8)]), startPoint: .top, endPoint: .bottom)).cornerRadius(10).padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                                    
+                                    Spacer().frame(height: 64)
+                                }
+                                Spacer()
+                            }//HStack
+                           
+                    
+                )
             }
         }
     }

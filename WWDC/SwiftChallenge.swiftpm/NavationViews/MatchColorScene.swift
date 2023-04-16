@@ -37,7 +37,7 @@ struct MatchColorScene: View {
            
                     DetailPopUpView(indexNum: $indexNum, popUpToggle: $popUpToggle)
                         .opacity(popUpToggle ? 1 : 0)
-                        .animation(.easeInOut(duration: 0.2))
+                        .animation(.easeInOut(duration: 0.5))
                         .onAppear()
 
                 

@@ -13,12 +13,37 @@ class GlobalStore: ObservableObject {
     @Published var colorGray0 = Color(red: 1.0, green: 1.0, blue: 1.0)
     @Published var colorGray1 = Color(red: 0.95, green: 0.95, blue: 0.95)
     @Published var colorGray2 = Color(red: 0.7, green: 0.7, blue: 0.7)
+    @Published var bgColor0 = Color(red: 0.8, green: 0.8, blue: 0.8)
     @Published var bgColor1 = Color(red: 0.8, green: 0.8, blue: 0.8)
     @Published var bgColor2 = Color(red: 0.8, green: 0.8, blue: 0.8)
     @Published var bgColor3 = Color(red: 0.8, green: 0.8, blue: 0.8)
-    
+    @Published var isScoreActive = false
+    @Published var colorGrades: [Double] = [0, 0, 0]
+    @Published var score: [String] = ["", "", ""]
 }
 
+extension GlobalStore {
+    func doActivateScore() {
+        isScoreActive = true
+    }
+    
+    func compareColorScore(currentIndex: Int) {
+        
+        print("비교하기")
+        let compareColor1 = colorDifference(bgColor1, info.color1[currentIndex])
+        let compareColor2 = colorDifference(bgColor2, info.color2[currentIndex])
+        let compareColor3 = colorDifference(bgColor3, info.color3[currentIndex])
+
+        colorGrades = [compareColor1, compareColor2, compareColor3]
+        
+        for i in 0...2 {
+            if colorGrades[i] <= 100 { score[i] = "Perfect!" } else if colorGrades[i]  > 100 && colorGrades[i] <= 300 { score[i] = "Very good!" } else if colorGrades[i] > 300 { score[i] = "Try again" }
+        }
+        
+    
+        print(colorGrades)
+    }
+}
 
 
 

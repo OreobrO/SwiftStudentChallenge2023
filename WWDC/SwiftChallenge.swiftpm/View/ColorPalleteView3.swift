@@ -62,11 +62,10 @@ struct ColorPalleteView3: View {
         .background(RoundedCorners(color: globalStore.bgColor3, tl: 24, tr: 24, bl: 90, br: 24))
         .gesture(dragGesture)
         .overlay(
-            Text("Very Good")
+            Text(globalStore.score[2])
                 .font(.largeTitle.bold())
-                .foregroundColor(Color.white)
-                .offset(y: 50)
-            )
+                .foregroundColor(Color.black)
+                .offset(y: 50))
     }
     
     var dragGesture: some Gesture {

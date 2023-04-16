@@ -40,13 +40,20 @@ struct ImageView: View {
                 //Button 2
                 Button("Previous"){
                    indexNum = (indexNum + info.image.count - 1) % info.image.count
-                
+                    globalStore.bgColor1 = globalStore.bgColor0
+                    globalStore.bgColor2 = globalStore.bgColor0
+                    globalStore.bgColor3 = globalStore.bgColor0
+                    print("Previous")
                     print("\(indexNum)")
                 }.buttonStyle(.bordered).controlSize(.large).font(.body.bold()).foregroundColor(Color.black).background(Color.white).cornerRadius(10).padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 8))
                 //Button 3
                 Button("Next"){
                     indexNum = (indexNum + 1) % info.image.count
-                   
+                    globalStore.bgColor1 = globalStore.bgColor0
+                    globalStore.bgColor2 = globalStore.bgColor0
+                    globalStore.bgColor3 = globalStore.bgColor0
+                    globalStore.score = ["", "", ""]
+                    print("Next")
                     print("\(indexNum)")
                 }.buttonStyle(.bordered).controlSize(.large).font(.body.bold()).foregroundColor(Color.black).background(Color.white).cornerRadius(10).padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
             }

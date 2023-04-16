@@ -13,8 +13,7 @@ struct ColorPalleteView2: View {
     @Binding var indexNum: Int
     
     var body: some View {
-        ZStack {
-            
+            ZStack {
             //ColorPicker Circle
             if startLocation != nil {
                 Circle()
@@ -41,19 +40,19 @@ struct ColorPalleteView2: View {
                                 ]), center: .center, startRadius: 0, endRadius: radius)
                             )
                             .overlay(
-                        Circle()
-                            .strokeBorder(Color.white, lineWidth: 5))
+                                Circle()
+                                    .strokeBorder(Color.white, lineWidth: 5))
                             .frame(width: diameter + 10, height: diameter + 10)
                     )
                     .position(startLocation!)
                     .shadow(color: Color.black.opacity(0.1), radius: 6, y: 8)
-//                    .zIndex(5)
+                //                    .zIndex(5)
                 
                 Circle()
                     .frame(width: 15, height: 15)
                     .position(location!)
                     .foregroundColor(.black)
-//                    .zIndex(10)
+                //                    .zIndex(10)
             }
             
         }
@@ -61,11 +60,10 @@ struct ColorPalleteView2: View {
         .background(RoundedCorners(color: globalStore.bgColor2, tl: 24, tr: 24, bl: 90, br: 24))
         .gesture(dragGesture)
         .overlay(
-            Text("Perfect")
-                .font(.largeTitle.bold())
-                .foregroundColor(Color.white)
-                .offset(y: 50)
-            )
+            Text(globalStore.score[1])
+            .font(.largeTitle.bold())
+            .foregroundColor(Color.black)
+            .offset(y: 50))
     }
     
     var dragGesture: some Gesture {
