@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ConceptScene: View {
     
-    let globalStore = GlobalStore()
+    @EnvironmentObject var globalStore: GlobalStore
     
     var body: some View {
         
@@ -35,7 +35,7 @@ struct ConceptScene: View {
 
 struct ConceptScene_Previews: PreviewProvider {
     static var previews: some View {
-        ConceptScene()
+        ConceptScene().environmentObject(GlobalStore())
             .previewDevice(PreviewDevice(rawValue: "iPad Pro (12.9-inch)"))
             .previewInterfaceOrientation(.landscapeRight)
     }

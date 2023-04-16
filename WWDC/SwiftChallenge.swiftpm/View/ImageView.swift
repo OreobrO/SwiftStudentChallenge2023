@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ImageView: View {
+    
+    @EnvironmentObject var globalStore: GlobalStore
     @Binding var indexNum: Int
     
     var body: some View {
@@ -55,9 +57,9 @@ struct ImageView: View {
     }
 }
 
-
+//
 //struct ImageView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        ImageView(indexNum: 0)
+//        ImageView(indexNum: $indexNum).environmentObject(GlobalStore())
 //    }
 //}

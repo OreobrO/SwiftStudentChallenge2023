@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ColorPalleteView1: View {
     
-    let globalStore = GlobalStore()
+    @EnvironmentObject var globalStore: GlobalStore
     let radius: CGFloat = 100
     var diameter: CGFloat {
         radius * 2
@@ -10,7 +10,7 @@ struct ColorPalleteView1: View {
     
     @State private var startLocation: CGPoint?
     @State private var location: CGPoint?
-    @State var bgColor1: Color = Color(red: 0.8, green: 0.8, blue: 0.8)
+
     @Binding var indexNum: Int
     
     var body: some View {
@@ -59,35 +59,21 @@ struct ColorPalleteView1: View {
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(RoundedCorners(color: bgColor1, tl: 24, tr: 24, bl: 90, br: 24))
+            .background(RoundedCorners(color: globalStore.bgColor1, tl: 24, tr: 24, bl: 90, br: 24))
             .gesture(dragGesture)
             
-//            ScoreView(bgColor1: $bgColor1, indexNum: $indexNum)
+//            ScoreView(indexNum: $indexNum)
             
         }//ZStack
     }
     
     struct ScoreView: View {
         
-        let globalStore = GlobalStore()
-        @Binding var bgColor1: Color
+        @EnvironmentObject var globalStore: GlobalStore
+        
         @Binding var indexNum: Int
         @State private var scoreAlert: [String] = ["", "Try again", "Very Good", "Perfect"]
         @State private var scoreCheck: Int = 0
-        
-        private func updateScoreCheck() {
-            if indexNum == 0 {
-                scoreCheck = 100
-            } else if indexNum == 1 {
-                scoreCheck = 85
-            } else if indexNum == 2 {
-                scoreCheck = 70
-            } else if indexNum == 3 {
-                scoreCheck = 0
-            } else if indexNum == 4 {
-                scoreCheck = 0
-            }
-        }
 
 var body: some View {
     
@@ -99,7 +85,7 @@ var body: some View {
             .foregroundColor(Color.white)
             .offset(y: 50)
     case 80 ..< 90:
-        Color.blue
+        Color.white
         Text(scoreAlert[2])
             .font(.largeTitle.bold())
             .foregroundColor(Color.white)
@@ -118,10 +104,19 @@ var body: some View {
             .offset(y: 50)
     }
 }
-
-
-
-
+        private func updateScoreCheck() {
+            if indexNum == 0 {
+                scoreCheck = 100
+            } else if indexNum == 1 {
+                scoreCheck = 85
+            } else if indexNum == 2 {
+                scoreCheck = 70
+            } else if indexNum == 3 {
+                scoreCheck = 0
+            } else if indexNum == 4 {
+                scoreCheck = 0
+            }
+        }
 }
 
 
@@ -164,13 +159,13 @@ var dragGesture: some Gesture {
             
             let hue = angle.degrees / 360
             let saturation = Double(distance / radius)
-            bgColor1 = Color(hue: hue, saturation: saturation, brightness: 1.0)
+            globalStore.bgColor1 = Color(hue: hue, saturation: saturation, brightness: 1.0)
         }
     
         .onEnded { val in
             startLocation = nil
             location = nil
-            print("bgColor1 = \(bgColor1)")
+            print("globalStore.bgColor1 = \(globalStore.bgColor1)")
             print(indexNum)
             
         }
@@ -179,8 +174,6 @@ var dragGesture: some Gesture {
 }
 //struct ColorPalleteView1_Previews: PreviewProvider {
 //    static var previews: some View {
-//        ColorPalleteView1()
+//        ColorPalleteView1(indexNum: $indexNum).environmentObject(GlobalStore())
 //    }
 //}
-
-//brightness를 바꿔야함

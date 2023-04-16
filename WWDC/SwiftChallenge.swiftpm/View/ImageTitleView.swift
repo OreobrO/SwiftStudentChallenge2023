@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ImageTitleView: View {
-    
+   
+    @EnvironmentObject var globalStore: GlobalStore
     @Binding var indexNum: Int
     
     var body: some View {
@@ -37,9 +38,9 @@ struct ImageTitleView: View {
         }
     }
 }
-
+//
 //struct ImageTitleView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        ImageTitleView(indexNum: )
+//        ImageTitleView(indexNum: 0).environmentObject(GlobalStore())
 //    }
-//}
+////}

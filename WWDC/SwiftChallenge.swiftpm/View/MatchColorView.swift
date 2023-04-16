@@ -60,7 +60,7 @@ struct MatchColorView: View {
                                     Spacer().frame(height: 32)
                                     
                                     //ColorPalleteView 2
-                                    ColorPalleteView2()
+                                    ColorPalleteView2(indexNum: $indexNum)
                                         .frame(width: geometry.size.width * 0.5, height: nil)
                                         .overlay(
                                             Circle()
@@ -79,7 +79,7 @@ struct MatchColorView: View {
                                     Spacer().frame(height: 32)
                                     
                                     //ColorPalleteView 3
-                                    ColorPalleteView3()
+                                    ColorPalleteView3(indexNum: $indexNum)
                                         .frame(width: geometry.size.width * 0.5, height: nil)
                                         .overlay(
                                             Circle()
@@ -103,12 +103,17 @@ struct MatchColorView: View {
                             Spacer().frame(width: geometry.size.width * 0.08)
                             VStack(alignment: .leading) {
                                 
-                                Button("Redo"){ }.buttonStyle(.bordered).controlSize(.large).font(.body.bold()).foregroundColor(Color.black).background(Color.white).cornerRadius(10).padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
+                                Button("Redo"){
+                                    globalStore.bgColor1 = Color.white
+                                    globalStore.bgColor2 = Color.white
+                                    globalStore.bgColor3 = Color.white
+                                    print("redo")
+                                }.buttonStyle(.bordered).controlSize(.large).font(.body.bold()).foregroundColor(Color.black).background(Color.white).cornerRadius(10).padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
                                 Button("Done"){
                                     print(indexNum)
-//                                    print("bgColor1 = \(bgColor1)")
-//                                    print("bgColor1 = \(bgColor2)")
-//                                    print("bgColor1 = \(bgColor3)")
+                                    print("globalStore.bgColor1 = \(globalStore.bgColor1)")
+                                    print("globalStore.bgColor1 = \(globalStore.bgColor2)")
+                                    print("globalStore.bgColor1 = \(globalStore.bgColor3)")
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                                         popUpToggle = true
                                     }
@@ -125,9 +130,11 @@ struct MatchColorView: View {
 }
 
 
+
+//
 //struct MatchColorView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        MatchColorView()
+//        MatchColorView(indexNum: $indexNum, popUpToggle: $popUpToggle).environmentObject(GlobalStore())
 //    }
 //}
 

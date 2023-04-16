@@ -9,7 +9,7 @@ import SwiftUI
 
 struct IntroScene: View {
     
-    let globalStore = GlobalStore()
+    @EnvironmentObject var globalStore: GlobalStore
     
     var body: some View {
         ZStack {
@@ -22,14 +22,14 @@ struct IntroScene: View {
                 .edgesIgnoringSafeArea(.all)
             Text("Gallery of What We See")
                 .font(.system(size: 80)).fontWeight(.bold).foregroundColor(.black)
-                .offset(y: -20)
+                .offset(y: -30)
         }.edgesIgnoringSafeArea(.all)
     }
 }
 
 struct IntroScene_Previews: PreviewProvider {
     static var previews: some View {
-        IntroScene()
+        IntroScene().environmentObject(GlobalStore())
             .previewDevice(PreviewDevice(rawValue: "iPad Pro (12.9-inch)"))
             .previewInterfaceOrientation(.landscapeRight)
     }

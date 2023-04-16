@@ -9,10 +9,9 @@ import SwiftUI
 
 struct MatchColorScene: View {
     
-    let globalStore = GlobalStore()
+    @EnvironmentObject var globalStore: GlobalStore
     @State var indexNum: Int = 10
     @State private var popUpToggle: Bool = false
-    
     
     var body: some View {
         GeometryReader { geometry in
@@ -48,10 +47,10 @@ struct MatchColorScene: View {
     }
 }
 
-//struct MatchColorScene_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MatchColorScene()
-//            .previewDevice(PreviewDevice(rawValue: "iPad Pro (12.9-inch)"))
-//            .previewInterfaceOrientation(.landscapeRight)
-//    }
-//}
+struct MatchColorScene_Previews: PreviewProvider {
+    static var previews: some View {
+        MatchColorScene().environmentObject(GlobalStore())
+            .previewDevice(PreviewDevice(rawValue: "iPad Pro (12.9-inch)"))
+            .previewInterfaceOrientation(.landscapeRight)
+    }
+}

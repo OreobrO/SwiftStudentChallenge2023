@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ScrollViewScene: View {
     
-    let globalStore = GlobalStore()
+    @EnvironmentObject var globalStore: GlobalStore
     
     var body: some View {
         GeometryReader { geometry in
@@ -59,6 +59,6 @@ struct ScrollViewScene: View {
 
 struct ScrollViewScene_Previews: PreviewProvider {
     static var previews: some View {
-        ScrollViewScene()
+        ScrollViewScene().environmentObject(GlobalStore())
     }
 }

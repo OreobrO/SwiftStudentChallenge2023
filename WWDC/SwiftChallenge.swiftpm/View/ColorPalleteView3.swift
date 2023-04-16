@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ColorPalleteView3: View {
     
-    let globalStore = GlobalStore()
+    @EnvironmentObject var globalStore: GlobalStore
     let radius: CGFloat = 100
     var diameter: CGFloat {
         radius * 2
@@ -10,7 +10,8 @@ struct ColorPalleteView3: View {
     
     @State private var startLocation: CGPoint?
     @State private var location: CGPoint?
-    @State var bgColor3: Color = Color(red: 0.8, green: 0.8, blue: 0.8)
+
+    @Binding var indexNum: Int
     
     var body: some View {
         ZStack {
@@ -58,7 +59,7 @@ struct ColorPalleteView3: View {
             
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(RoundedCorners(color: bgColor3, tl: 24, tr: 24, bl: 90, br: 24))
+        .background(RoundedCorners(color: globalStore.bgColor3, tl: 24, tr: 24, bl: 90, br: 24))
         .gesture(dragGesture)
         .overlay(
             Text("Very Good")
@@ -103,22 +104,21 @@ struct ColorPalleteView3: View {
                 
                 let hue = angle.degrees / 360
                 let saturation = Double(distance / radius)
-                bgColor3 = Color(hue: hue, saturation: saturation, brightness: 1.0)
+                globalStore.bgColor3 = Color(hue: hue, saturation: saturation, brightness: 1.0)
             }
         
             .onEnded { val in
                 startLocation = nil
                 location = nil
-                print("bgColor3 = \(bgColor3)")
-                
+                print("globalStore.bgColor3 = \(globalStore.bgColor3)")
+                print(indexNum)
             }
     }
     
 }
 //struct ColorPalleteView3_Previews: PreviewProvider {
 //    static var previews: some View {
-//        ColorPalleteView3()
+//        ColorPalleteView3().environmentObject(GlobalStore())
 //    }
 //}
-
-//brightness를 바꿔야함
+//

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DetailPopUpView: View {
     
-    let globalStore = GlobalStore()
+    @EnvironmentObject var globalStore: GlobalStore
     @Binding var indexNum: Int
     @Binding var popUpToggle: Bool
     
@@ -79,7 +79,6 @@ struct DetailPopUpView: View {
                                 .multilineTextAlignment(.center)
                                 .frame(width: 500, height: 160, alignment: .top)
                                 .lineLimit(7)
-                                .border(Color.black)
                             
                             Spacer().frame(height: 30)
                             Button(action: {
@@ -112,7 +111,7 @@ struct DetailPopUpView: View {
 //struct DetailPopUpView_Previews: PreviewProvider {
 //
 //    static var previews: some View {
-//        DetailPopUpView(indexNum: 0)
+//        DetailPopUpView(indexNum: 0).environmentObject(GlobalStore())
 //            .previewDevice(PreviewDevice(rawValue: "iPad Pro (12.9-inch)"))
 //                    .previewInterfaceOrientation(.landscapeRight)
 //    }
