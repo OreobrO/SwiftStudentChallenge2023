@@ -14,7 +14,7 @@ struct MatchColorScene: View {
     
     var body: some View {
         GeometryReader { geometry in
-            ZStack {
+            ZStack(alignment: .center) {
                 Rectangle()
                     .fill(globalStore.colorGray2)
                     .edgesIgnoringSafeArea(.all)
@@ -27,10 +27,10 @@ struct MatchColorScene: View {
                         Spacer().frame(width: 32)
                         MatchColorView(indexNum: $indexNum).frame(width: geometry.size.width * 0.44)
                     }.edgesIgnoringSafeArea(.all)
-                }
-                
+                }.edgesIgnoringSafeArea(.all) //ZStack
                 DetailPopUpView(indexNum: $indexNum)
-            }//ZStack
+                    
+            }.edgesIgnoringSafeArea(.all) //ZStack
         }//Geometry Reader
         
     }

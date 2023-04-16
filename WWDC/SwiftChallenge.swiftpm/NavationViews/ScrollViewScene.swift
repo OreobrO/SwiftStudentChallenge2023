@@ -26,7 +26,7 @@ struct ScrollViewScene: View {
             VStack {
                 ScrollView(.horizontal) {
                     HStack {
-                        ForEach(0...4 , id: \.self) { i in
+                        ForEach(0 ..< info.image.count , id: \.self) { i in
                             NavigationLink(destination: MatchColorScene(indexNum: i))
                             {
                                 VStack {
@@ -51,7 +51,7 @@ struct ScrollViewScene: View {
                     .padding()
             }//VStack
             
-        }//ZStack
+        } //ZStack
     }
 }
 

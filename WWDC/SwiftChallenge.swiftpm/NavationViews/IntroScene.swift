@@ -23,8 +23,7 @@ struct IntroScene: View {
             Text("Gallery of What We See")
                 .font(.system(size: 80)).fontWeight(.bold).foregroundColor(.black)
                 .offset(y: -30)
-            
-        }
+        }.edgesIgnoringSafeArea(.all)
     }
 }
 
