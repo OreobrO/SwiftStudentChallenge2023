@@ -15,14 +15,13 @@ struct EndingScene: View {
             ZStack(alignment: .center) {
                 Rectangle()
                     .fill(RadialGradient(
-                        gradient: Gradient(colors: [globalStore.colorGray2, globalStore.colorGray0]),
-                        center: .bottom,
-                        startRadius: 200,
-                        endRadius: 1000))
+                        gradient: Gradient(colors: [globalStore.colorGray1, Color.black]),
+                        center: .top,
+                        startRadius: 600,
+                        endRadius: 1800))
                     .edgesIgnoringSafeArea(.all)
                 Text("This is the ending")
                     .font(.system(size: 80)).fontWeight(.bold).foregroundColor(.black)
-                    .border(Color.black)
                     .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
                     .offset(x: -30)
             }.edgesIgnoringSafeArea(.all)
@@ -36,3 +35,4 @@ struct EndingScene_Previews: PreviewProvider {
      
     }
 }
+

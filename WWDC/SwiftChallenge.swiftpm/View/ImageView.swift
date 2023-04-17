@@ -20,18 +20,25 @@ struct ImageView: View {
             HStack (alignment: .bottom) {
                 //Picture View
                 GeometryReader { geometry in
-                    Rectangle()
-                        .fill(Color.white)
-                        .frame(width: geometry.size.width, height: geometry.size.height)
-                        .overlay(
-                            Image(info.image[indexNum])
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: geometry.size.width - 32, height: geometry.size.height - 32)
-                                .background(Color.white)
-                                .clipShape(Rectangle())
-                        )
+
+                    ZStack {
+                        Rectangle()
+                            .fill(Color.white.opacity(0.8))
+                            .frame(width: geometry.size.width, height: geometry.size.height)
                     
+                        ScrollView(.horizontal) {
+                        Image(info.image[indexNum])
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: geometry.size.width, height: geometry.size.height)
+                            .background(Color.white)
+                        }
+                        
+                        Rectangle()
+                            .stroke(Color.white, lineWidth: 16)
+                            .frame(width: geometry.size.width - 16, height: geometry.size.height - 16)
+                    
+                    }
                 }
             }
             Spacer().frame(height: 16)

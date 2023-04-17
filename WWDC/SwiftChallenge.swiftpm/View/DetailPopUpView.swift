@@ -84,9 +84,9 @@ struct DetailPopUpView: View {
                             Spacer().frame(height: 30)
                             HStack {
                                 Button(action: {
-                                    globalStore.bgColor1 = globalStore.bgColor0
-                                    globalStore.bgColor2 = globalStore.bgColor0
-                                    globalStore.bgColor3 = globalStore.bgColor0
+//                                    globalStore.bgColor1 = globalStore.bgColor0
+//                                    globalStore.bgColor2 = globalStore.bgColor0
+//                                    globalStore.bgColor3 = globalStore.bgColor0
                                     globalStore.score = ["", "", ""]
                                     popUpToggle = false
                                     print("Redo")

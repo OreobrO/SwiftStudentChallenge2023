@@ -19,10 +19,10 @@ struct MatchColorScene: View {
             ZStack(alignment: .center) {
                 Rectangle()
                     .fill(RadialGradient(
-                        gradient: Gradient(colors: [globalStore.colorGray2, globalStore.colorGray0]),
+                        gradient: Gradient(colors: [globalStore.colorGray2, Color.white]),
                         center: .bottom,
-                        startRadius: 500,
-                        endRadius: 1500))
+                        startRadius: 600,
+                        endRadius: 1800))
                     .edgesIgnoringSafeArea(.all)
                 ZStack {
                     HStack(alignment: .bottom) {

@@ -12,7 +12,7 @@ func getColorDifferenceRGB(_ color1: Color, _ color2: Color) -> CGFloat {
     let redDifference = abs(red1 - red2)
     let greenDifference = abs(green1 - green2)
     let blueDifference = abs(blue1 - blue2)
-    let alphaDifference = abs(alpha1 - alpha2)
+//    let alphaDifference = abs(alpha1 - alpha2)
     
     // Calculate the total difference using a weighted average
     let totalDifferenceRGB = pow(pow(redDifference, 2) + pow(greenDifference, 2) + pow(blueDifference, 2), 0.5)

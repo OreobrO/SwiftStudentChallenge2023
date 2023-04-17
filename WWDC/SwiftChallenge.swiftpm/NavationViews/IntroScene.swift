@@ -10,20 +10,24 @@ import SwiftUI
 struct IntroScene: View {
     
     @EnvironmentObject var globalStore: GlobalStore
+    @State private var radiusToggle: Bool = false
     
     var body: some View {
         ZStack {
             Rectangle()
                 .fill(RadialGradient(
-                    gradient: Gradient(colors: [globalStore.colorGray2, globalStore.colorGray0]),
-                    center: .bottom,
-                    startRadius: 200,
-                    endRadius: 1000))
+                    gradient: Gradient(colors: [globalStore.colorGray1, Color.black]),
+                    center: .top,
+                    startRadius: radiusToggle ? 600 : 150,
+                    endRadius: radiusToggle ? 1800 : 900))
                 .edgesIgnoringSafeArea(.all)
+                .onAppear() { radiusToggle = true }
+                .animation(.easeInOut(duration: 2))
+                
             Text("Gallery of What We See")
                 .font(.system(size: 80)).fontWeight(.bold).foregroundColor(.black)
-                .offset(y: -30)
-        }.edgesIgnoringSafeArea(.all)
+
+        }.background(Color.black).edgesIgnoringSafeArea(.all)
     }
 }
 

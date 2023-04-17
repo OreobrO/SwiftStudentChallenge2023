@@ -17,10 +17,10 @@ struct ScrollViewScene: View {
                 
                 Rectangle()
                     .fill(RadialGradient(
-                        gradient: Gradient(colors: [globalStore.colorGray2, globalStore.colorGray0]),
-                        center: .bottom,
-                        startRadius: 200,
-                        endRadius: 1000))
+                        gradient: Gradient(colors: [globalStore.colorGray1, Color.black]),
+                        center: .top,
+                        startRadius: 600,
+                        endRadius: 1800))
                     .edgesIgnoringSafeArea(.all)
             
                 VStack {
