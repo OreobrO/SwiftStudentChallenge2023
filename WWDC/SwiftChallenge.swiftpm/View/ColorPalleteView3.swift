@@ -21,24 +21,24 @@ struct ColorPalleteView3: View {
                 Circle()
                     .fill(
                         AngularGradient(gradient: Gradient(colors: [
-                            Color(hue: 1.0, saturation: 1, brightness: 1.0),
-                            Color(hue: 0.9, saturation: 1, brightness: 1.0),
-                            Color(hue: 0.8, saturation: 1, brightness: 1.0),
-                            Color(hue: 0.7, saturation: 1, brightness: 1.0),
-                            Color(hue: 0.6, saturation: 1, brightness: 1.0),
-                            Color(hue: 0.5, saturation: 1, brightness: 1.0),
-                            Color(hue: 0.4, saturation: 1, brightness: 1.0),
-                            Color(hue: 0.3, saturation: 1, brightness: 1.0),
-                            Color(hue: 0.2, saturation: 1, brightness: 1.0),
-                            Color(hue: 0.1, saturation: 1, brightness: 1.0),
-                            Color(hue: 0.0, saturation: 1, brightness: 1.0),
+                            Color(hue: 1.0, saturation: 1, brightness: globalStore.changeBrightness(currentIndex: indexNum)[2]),
+                            Color(hue: 0.9, saturation: 1, brightness: globalStore.changeBrightness(currentIndex: indexNum)[2]),
+                            Color(hue: 0.8, saturation: 1, brightness: globalStore.changeBrightness(currentIndex: indexNum)[2]),
+                            Color(hue: 0.7, saturation: 1, brightness: globalStore.changeBrightness(currentIndex: indexNum)[2]),
+                            Color(hue: 0.6, saturation: 1, brightness: globalStore.changeBrightness(currentIndex: indexNum)[2]),
+                            Color(hue: 0.5, saturation: 1, brightness: globalStore.changeBrightness(currentIndex: indexNum)[2]),
+                            Color(hue: 0.4, saturation: 1, brightness: globalStore.changeBrightness(currentIndex: indexNum)[2]),
+                            Color(hue: 0.3, saturation: 1, brightness: globalStore.changeBrightness(currentIndex: indexNum)[2]),
+                            Color(hue: 0.2, saturation: 1, brightness: globalStore.changeBrightness(currentIndex: indexNum)[2]),
+                            Color(hue: 0.1, saturation: 1, brightness: globalStore.changeBrightness(currentIndex: indexNum)[2]),
+                            Color(hue: 0.0, saturation: 1, brightness: globalStore.changeBrightness(currentIndex: indexNum)[2]),
                         ]), center: .center))
                     .frame(width: diameter, height: diameter)
                     .overlay(
                         Circle()
                             .fill(
                                 RadialGradient(gradient: Gradient(colors: [
-                                    Color.white, Color.white.opacity(0.000001)
+                                    Color.white.opacity(globalStore.changeBrightness(currentIndex: indexNum)[2]), Color.white.opacity(0.000001)
                                 ]), center: .center, startRadius: 0, endRadius: radius)
                             )
                             .overlay(
@@ -103,7 +103,7 @@ struct ColorPalleteView3: View {
                 
                 let hue = angle.degrees / 360
                 let saturation = Double(distance / radius)
-                globalStore.bgColor3 = Color(hue: hue, saturation: saturation, brightness: 1.0)
+                globalStore.bgColor3 = Color(hue: hue, saturation: saturation, brightness: globalStore.changeBrightness(currentIndex: indexNum)[2])
             }
         
             .onEnded { val in

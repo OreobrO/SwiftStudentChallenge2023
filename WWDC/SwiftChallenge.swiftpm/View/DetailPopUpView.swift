@@ -36,7 +36,7 @@ struct DetailPopUpView: View {
                             Spacer().frame(height: 70)
                             
                             HStack(alignment: .top) {
-                                Image(info.PopImage[0])
+                                Image(info.PopImage[indexNum])
                                     .resizable()
                                     .scaledToFill()
                                     .frame(width: 200, height: 200)//width == height
@@ -73,7 +73,7 @@ struct DetailPopUpView: View {
                                 }//VStack
                                 Spacer()
                             } //HStack
-                            Spacer().frame(height: 30)
+                            Spacer().frame(height: 10)
                             
                             Text(info.PopDetail[indexNum])
                                 .font(.body).fontWeight(.light).foregroundColor(.black)
@@ -82,29 +82,48 @@ struct DetailPopUpView: View {
                                 .lineLimit(7)
                             
                             Spacer().frame(height: 30)
-                            Button(action: {
-                                popUpToggle = false
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                    indexNum += indexNum == info.image.count - 1 ? 0 : 1
-//                                    indexNum = (indexNum + 1) % info.image.count
+                            HStack {
+                                Button(action: {
                                     globalStore.bgColor1 = globalStore.bgColor0
                                     globalStore.bgColor2 = globalStore.bgColor0
                                     globalStore.bgColor3 = globalStore.bgColor0
                                     globalStore.score = ["", "", ""]
-                                   
+                                    popUpToggle = false
+                                    print("Redo")
+                                    
+                                }) {
+                                    Text("Redo")
+                                        .font(.body.bold())
+                                        .foregroundColor(Color.white)
+                                        .frame(width: 250, height: 50)
+                                        .controlSize(.large)
+                                        .background(LinearGradient(gradient: Gradient(colors: [Color.gray.opacity(0.3), Color.gray.opacity(0.3)]), startPoint: .top, endPoint: .bottom))
+                                        .cornerRadius(15)
                                 }
-                                print("Next")
-                                print("\(indexNum)")
-                                
-                            }) {
-                                Text("Next")
-                                    .font(.body.bold())
-                                    .foregroundColor(Color.white)
-                                    .frame(width: 500, height: 50)
-                                    .controlSize(.large)
-                                    .background(LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.5), Color.blue.opacity(0.8)]), startPoint: .top, endPoint: .bottom))
-                                    .cornerRadius(15)
-                            }
+                                Button(action: {
+                                    popUpToggle = false
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                        indexNum += indexNum == info.image.count - 1 ? 0 : 1
+                                        //                                    indexNum = (indexNum + 1) % info.image.count
+                                        globalStore.bgColor1 = globalStore.bgColor0
+                                        globalStore.bgColor2 = globalStore.bgColor0
+                                        globalStore.bgColor3 = globalStore.bgColor0
+                                        globalStore.score = ["", "", ""]
+                                        
+                                    }
+                                    print("Next")
+                                    print("\(indexNum)")
+                                    
+                                }) {
+                                    Text("Next")
+                                        .font(.body.bold())
+                                        .foregroundColor(Color.white)
+                                        .frame(width: 250, height: 50)
+                                        .controlSize(.large)
+                                        .background(LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.5), Color.blue.opacity(0.8)]), startPoint: .top, endPoint: .bottom))
+                                        .cornerRadius(15)
+                                }
+                            }//HStack
                             
                             Spacer().frame(height: 50)
                             

@@ -29,13 +29,13 @@ struct Info {
         detail: ["Detail 1", "Detail 2", "Detail 3", "Detail 4", "Detail 5"],
         color1: [
             Color(red: 255/255, green: 0/255, blue: 0/255),
-            Color(red: 155/255, green: 255/255, blue: 0/255),
+            Color(red: 155/255, green: 30/255, blue: 0/255),
             Color(red: 150/255, green: 100/255, blue: 255/255),
             Color(red: 0/255, green: 205/255, blue: 200/255),
             Color(red: 150/255, green: 150/255, blue: 150/255),
         ],
         color2: [
-            Color(red: 100/255, green: 200/255, blue: 0/255),
+            Color(red: 80/255, green: 150/255, blue: 0/255),
             Color(red: 20/255, green: 100/255, blue: 50/255),
             Color(red: 155/255, green: 200/255, blue: 255/255),
             Color(red: 50/255, green: 150/255, blue: 150/255),
