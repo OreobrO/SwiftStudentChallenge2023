@@ -24,8 +24,8 @@ struct IntroScene: View {
                 .onAppear() { radiusToggle = true }
                 .animation(.easeInOut(duration: 2))
                 
-            Text("Gallery of What We See")
-                .font(.system(size: 80)).fontWeight(.bold).foregroundColor(.black)
+            Text("Gallery of\nWHAT WE SEE")
+                .font(.system(size: 100)).fontWeight(.bold).foregroundColor(.black)
 
         }.background(Color.black).edgesIgnoringSafeArea(.all)
     }
