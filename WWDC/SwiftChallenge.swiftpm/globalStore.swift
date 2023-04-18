@@ -67,8 +67,6 @@ extension GlobalStore {
 }
 
 
-
-
 struct RoundedCorners: View {
     var color: Color = .black
     var tl: CGFloat = 0.0 // top-left radius parameter

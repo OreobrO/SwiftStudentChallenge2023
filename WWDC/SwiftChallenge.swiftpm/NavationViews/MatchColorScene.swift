@@ -13,6 +13,7 @@ struct MatchColorScene: View {
     @State var indexNum: Int = 10
     @State private var popUpToggle: Bool = false
     @State private var endingToggle: Bool = false
+    @State private var instructionToggle: Bool = false
     
     var body: some View {
         GeometryReader { geometry in
@@ -31,19 +32,26 @@ struct MatchColorScene: View {
                         Spacer().frame(width: 8)
                         ImageTitleView(indexNum: $indexNum).frame(width: geometry.size.width * 0.18)
                         Spacer().frame(width: 32)
-                        MatchColorView(indexNum: $indexNum, popUpToggle: $popUpToggle, endingToggle: $endingToggle).frame(width: geometry.size.width * 0.44)
+                        MatchColorView(indexNum: $indexNum, popUpToggle: $popUpToggle, endingToggle: $endingToggle, instructionToggle: $instructionToggle).frame(width: geometry.size.width * 0.44)
                     }.edgesIgnoringSafeArea(.all)
-                }.edgesIgnoringSafeArea(.all) //ZStack
+                }
+                .edgesIgnoringSafeArea(.all) //ZStack
+                
+                InstructionScene(instructionToggle: $instructionToggle)
+                    .opacity(instructionToggle ? 1 : 0)
+                    .animation(.easeInOut(duration: 0.3))
+                    .onAppear()
                 
                 DetailPopUpView(indexNum: $indexNum, popUpToggle: $popUpToggle, endingToggle: $endingToggle)
-                        .opacity(popUpToggle ? 1 : 0)
-                        .animation(.easeInOut(duration: 0.5))
-                        .onAppear()
-                    EndingScene()
-                        .opacity(endingToggle ? 1 : 0)
-                        .animation(.easeInOut(duration: 1))
-                        .onAppear()
-
+                    .opacity(popUpToggle ? 1 : 0)
+                    .animation(.easeInOut(duration: 0.5))
+                    .onAppear()
+                
+                EndingScene()
+                    .opacity(endingToggle ? 1 : 0)
+                    .animation(.easeInOut(duration: 1))
+                    .onAppear()
+                
                 
             }.edgesIgnoringSafeArea(.all) //ZStack
         }//Geometry Reader
@@ -51,10 +59,10 @@ struct MatchColorScene: View {
     }
 }
 
-struct MatchColorScene_Previews: PreviewProvider {
-    static var previews: some View {
-        MatchColorScene().environmentObject(GlobalStore())
-            .previewDevice(PreviewDevice(rawValue: "iPad Pro (12.9-inch)"))
-            .previewInterfaceOrientation(.landscapeRight)
-    }
-}
+//struct MatchColorScene_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MatchColorScene().environmentObject(GlobalStore())
+//            .previewDevice(PreviewDevice(rawValue: "iPad Pro (12.9-inch)"))
+//            .previewInterfaceOrientation(.landscapeRight)
+//    }
+//}
