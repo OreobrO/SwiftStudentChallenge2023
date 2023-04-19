@@ -48,19 +48,7 @@ let info = Info(
         Color(red: 38/255, green: 48/255, blue: 63/255)],
     PopImage: ["PopImage_001", "PopImage_002", "PopImage_003", "PopImage_004", "PopImage_005"],
     PopTitle: ["Egyption Blue\nThe first pigment", "Golden Sheen\nHeavenly Beauty", "Pastel & Cayon\nRough texture", "Floating Roof on\nWalls and glasses", "Inside-Out\nColor of function"],
-//    PopDetail: [
-//        "The people of ancient Egypt drew on walls to remember their lives and what they wanted in the afterlife.\nThe blue color they used was called Egyptian Blue, the first pigment in human history. It meant that good things will happen again in the future. The red color, called Red Ochre, meant power and winning.",
-//
-//        "Venus's long hair and large seashell, as well as the steel wings of Pegasus, are all tinted with gold. Botticelli mixed the actual gold powder with egg white and applied it to the canvas to create a beautiful golden sheen. Then, he thinly applied tempera paint over it to give an overall hazy but bright expression.",
-//
-//        "\nMunch used bright and exaggerated colors to show the great fear he felt while traveling toward his hometown of Oslo. He filled the canvas with colors that looked like they were moving, using blunt pastels and crayons.",
-//
-//        "This  was the German Pavilion for the 1929 Barcelona International Exposition, an important building in the history of modern architecture. The horizontal roof supported by eight chrome alloy columns, seems to float in the sky, while the marble walls and glass create a flow of space that can both divide and connect spaces.",
-//
-//        "This inside-out building is a cultural center with a library, art museum, and music center. The architect focused on a structure where various forms of art and literature could come together. The building has a color system based on function, with green for plumbing, blue for ventilation, yellow for electrical wiring, and red for circulation."],
-    
     PopDetailImage: ["Text_001", "Text_002", "Text_003", "Text_004", "Text_005"]
-    
 )
 
 /* Font License
@@ -173,5 +161,26 @@ let info = Info(
  > URL: https://unsplash.com/ko/사진/PokplJPIaaA
  > License: Unsplash photos are made to be used freely. Our license reflects that. All photos can be downloaded and used for free,  Commercial and non-commercial purposes, No permission needed (though attribution is appreciated!)
  
+ [PersonImage_001]
+ > ImageName: People Avatar Collection
+ > Author: callmetak
+ > Published: 2021
+ > Format: JPG
+ > SiteName: Freepik
+ > URL: https://www.freepik.com/free-vector/set-male-avatars-vector-illustration-simple-line-drawings-isolated-white-background_19509089.htm#page=2&query=illustrations&position=39&from_view=keyword&track=sph >Image by callmetak on Freepik
+ > License: License summary Our license allows you to use the content / For commercial and personal projects /On digital or printed media /For an unlimited number of times and without any time limits /From anywhere in the world /To make modifications and create derivative works
+ 
+ [ConceptImage_001]
+ > ImageName: RGB Pixel
+ > Author: Umberto
+ > Published: 9 July 2019
+ > Format: JPG
+ > SiteName: Unsplash
+ > URL: https://unsplash.com/ko/사진/deb2EnbWPr8
+ > License: Unsplash photos are made to be used freely. Our license reflects that. All photos can be downloaded and used for free,  Commercial and non-commercial purposes, No permission needed (though attribution is appreciated!)
  
 */
+
+/*
+ all the other assets are created by myself, Mingyu Choi
+ */

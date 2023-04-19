@@ -46,8 +46,8 @@ struct ImageView: View {
             HStack(alignment: .bottom) {
                 //Button 2
                 Button("Previous"){
-                    indexNum -= indexNum == 0 ? 0 : 1
-//                   indexNum = (indexNum + info.image.count - 1) % info.image.count
+//                    indexNum -= indexNum == 0 ? 0 : 1
+                   indexNum = (indexNum + info.image.count - 1) % info.image.count
                     globalStore.bgColor1 = globalStore.bgColor0
                     globalStore.bgColor2 = globalStore.bgColor0
                     globalStore.bgColor3 = globalStore.bgColor0
@@ -56,8 +56,8 @@ struct ImageView: View {
                 }.buttonStyle(.bordered).controlSize(.large).font(.body.bold()).foregroundColor(Color.black).background(Color.white).cornerRadius(10).padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 8))
                 //Button 3
                 Button("Next"){
-                    indexNum += indexNum == info.image.count - 1 ? 0 : 1
-//                    indexNum = (indexNum + 1) % info.image.count
+//                    indexNum += indexNum == info.image.count - 1 ? 0 : 1
+                    indexNum = (indexNum + 1) % info.image.count
                     globalStore.bgColor1 = globalStore.bgColor0
                     globalStore.bgColor2 = globalStore.bgColor0
                     globalStore.bgColor3 = globalStore.bgColor0

@@ -52,11 +52,11 @@ struct MatchColorView: View {
                                                 .overlay(Circle().stroke(Color.white, lineWidth: 5))
                                                 .position(x: geometry.size.width * 0.42, y: geometry.size.height * 0.05))
                                         .overlay(
-                                            Text("Click here")
+                                            Text("Click & Drag")
                                                 .font(.body.bold())
                                                 .foregroundColor(Color.black)
-                                                .opacity(0.3)
-                                                .offset(x: -geometry.size.width * 0.14, y: -geometry.size.height * 0.085))
+                                                .opacity(0.5)
+                                                .offset(x: -geometry.size.width * 0.13, y: -geometry.size.height * 0.085))
                                     
                                     Spacer().frame(height: 32)
                                     
@@ -71,11 +71,11 @@ struct MatchColorView: View {
                                                 .overlay(Circle().stroke(Color.white, lineWidth: 5))
                                                 .position(x: geometry.size.width * 0.42, y: geometry.size.height * 0.05))
                                         .overlay(
-                                            Text("Click here")
+                                            Text("Click & Drag")
                                                 .font(.body.bold())
                                                 .foregroundColor(Color.black)
-                                                .opacity(0.3)
-                                                .offset(x: -geometry.size.width * 0.14, y: -geometry.size.height * 0.085))
+                                                .opacity(0.5)
+                                                .offset(x: -geometry.size.width * 0.13, y: -geometry.size.height * 0.085))
                                     
                                     Spacer().frame(height: 32)
                                     
@@ -90,11 +90,11 @@ struct MatchColorView: View {
                                                 .overlay(Circle().stroke(Color.white, lineWidth: 5))
                                                 .position(x: geometry.size.width * 0.42, y: geometry.size.height * 0.05))
                                         .overlay(
-                                            Text("Click here")
+                                            Text("Click & Drag")
                                                 .font(.body.bold())
                                                 .foregroundColor(Color.black)
-                                                .opacity(0.3)
-                                                .offset(x: -geometry.size.width * 0.14, y: -geometry.size.height * 0.085))
+                                                .opacity(0.5)
+                                                .offset(x: -geometry.size.width * 0.13, y: -geometry.size.height * 0.085))
                                     
                                     Spacer().frame(height: 64)
                                     
@@ -122,16 +122,6 @@ struct MatchColorView: View {
                                                 popUpToggle = true
                                             }
                                         }.buttonStyle(.bordered).controlSize(.large).font(.body.bold()).foregroundColor(Color.white).background(LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.5), Color.blue.opacity(0.8)]), startPoint: .top, endPoint: .bottom)).cornerRadius(10).padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-//                                    } else {
-//                                        Button("Done"){
-//                                            print(globalStore.colorGrades)
-//                                            globalStore.compareColorScore(currentIndex: indexNum)
-//                                            //info 와 globalStore의 값 비교하기
-//                                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-//                                                endingToggle = true
-//                                            }
-//                                        }.buttonStyle(.bordered).controlSize(.large).font(.body.bold()).foregroundColor(Color.white).background(LinearGradient(gradient: Gradient(colors: [Color.red.opacity(0.7), Color.red.opacity(0.9)]), startPoint: .top, endPoint: .bottom)).cornerRadius(10).padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-//                                    }
                                     
                                     Spacer().frame(height: 64)
                                 }
@@ -156,21 +146,3 @@ struct MatchColorView: View {
 }
 
 
-
-//
-//struct MatchColorView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MatchColorView(indexNum: $indexNum, popUpToggle: $popUpToggle).environmentObject(GlobalStore())
-//    }
-//}
-
-//    HStack{
-//        Spacer()
-//        VStack(alignment: .leading) {
-//            Spacer()
-//            Button("Redo"){ }.buttonStyle(.bordered).controlSize(.large).font(.body.bold()).foregroundColor(Color.black).background(Color.white).cornerRadius(10).padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
-//            Button("Done"){ }.buttonStyle(.bordered).controlSize(.large).font(.body.bold()).foregroundColor(Color.white).background(Color.gray).cornerRadius(10).padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-//            Spacer().frame(height: 64)
-//        }
-//        Spacer().frame(width: 120)
-//    }

@@ -37,7 +37,7 @@ extension GlobalStore {
         colorGrades = [compareColor1, compareColor2, compareColor3]
         
         for i in 0...2 {
-            if colorGrades[i] <= 5 { score[i] = "Perfect!" } else if colorGrades[i]  > 5 && colorGrades[i] <= 25 { score[i] = "Very good!" } else if colorGrades[i] > 25 { score[i] = "Try again" }
+            if colorGrades[i] <= 5 { score[i] = "Perfect!" } else if colorGrades[i]  > 5 && colorGrades[i] <= 20 { score[i] = "Very good!" } else if colorGrades[i] > 20 { score[i] = "Try again" }
         }
         print(colorGrades)
     }
@@ -104,3 +104,15 @@ struct RoundedCorners: View {
 }
 
 
+struct Triangle: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+
+        path.move(to: CGPoint(x: rect.midX, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+        path.addLine(to: CGPoint(x: rect.midX, y: rect.minY))
+
+        return path
+    }
+}

@@ -15,6 +15,7 @@ struct ConceptScene: View {
     @State private var viewToggle3: Bool = false
     @State private var viewToggle4: Bool = false
     @State private var viewToggle5: Bool = false
+    @State private var viewToggle6: Bool = false
     var body: some View {
         
         NavigationLink(destination: ScrollViewScene()) {
@@ -58,8 +59,15 @@ struct ConceptScene: View {
                             viewToggle5 = true
                         }
                     
-                        ConceptView5()
-                            .opacity(viewToggle5 ? 100 : 0)
+                    ConceptView5()
+                        .opacity(viewToggle5 ? 100 : 0)
+                        .onTapGesture {
+                            viewToggle5 = false
+                            viewToggle6 = true
+                        }
+                    
+                    ConceptView6()
+                        .opacity(viewToggle6 ? 100 : 0)
                     
                 }
         }.navigationTitle("Concept")
@@ -78,91 +86,273 @@ struct ConceptView1: View {
                     startRadius: 600,
                     endRadius: 1800))
                 .edgesIgnoringSafeArea(.all)
-            VStack{
-                Text("Have you ever wondered\nwhy certain colors are the way they are and what they mean?")
-                    .font(Font.custom("Cinzel-Medium", size: 28)).foregroundColor(.black)
-                    .padding(.init(top: 0, leading: 50, bottom: 30, trailing: 50))
+        VStack {
+            
+            HStack{
+                Rectangle()
+                    .fill(Color.clear)
+                    .frame(width: 400, height: 50)
+                
+                Rectangle()
+                    .fill(Color.clear)
+                    .frame(width: 600, height: 50)
+            }//HStack
+                
+                HStack(alignment: .bottom) {
+                    
+                    Image("PersonImage_001")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 400, height: 400)
+                    
+                    Image("ConceptText_001")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 600, height: 650)
+                }//HStack
             }//VStack
+        
     }
 }
 
 struct ConceptView2: View {
     @EnvironmentObject var globalStore: GlobalStore
     var body: some View {
+        Rectangle()
+            .fill(RadialGradient(
+                gradient: Gradient(colors: [globalStore.colorGray1, Color.black]),
+                center: .top,
+                startRadius: 600,
+                endRadius: 1800))
+            .edgesIgnoringSafeArea(.all)
+    VStack {
+        
+        HStack{
             Rectangle()
-                .fill(RadialGradient(
-                    gradient: Gradient(colors: [globalStore.colorGray1, Color.black]),
-                    center: .top,
-                    startRadius: 600,
-                    endRadius: 1800))
-                .edgesIgnoringSafeArea(.all)
-            VStack {
-                Text("Egyptian Blue, the world's first synthetic\npigment made during the Bronze Age in Egypt,\nhas been a precious color used for thousands of years.")
-                    .font(Font.custom("Cinzel-Medium", size: 28)).foregroundColor(.black)
-                    .padding(.init(top: 0, leading: 50, bottom: 30, trailing: 50))
+                .fill(Color.clear)
+                .frame(width: 400, height: 300)
+            
+            Image("Image_001")
+                .resizable()
+                .scaledToFit()
+                .clipShape(Circle())
+                .padding()
+                .frame(width: 600, height: 300)
+        }//HStack
+            
+            HStack(alignment: .bottom) {
                 
-            }//VStack
+                Image("PersonImage_001")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 400, height: 400)
+                
+                Image("ConceptText_002")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 600, height: 400)
+
+            }//HStack
+        }//VStack
+    
     }
 }
 
 struct ConceptView3: View {
     @EnvironmentObject var globalStore: GlobalStore
     var body: some View {
+        Rectangle()
+            .fill(RadialGradient(
+                gradient: Gradient(colors: [globalStore.colorGray1, Color.black]),
+                center: .top,
+                startRadius: 600,
+                endRadius: 1800))
+            .edgesIgnoringSafeArea(.all)
+    VStack {
+        
+        HStack{
             Rectangle()
-                .fill(RadialGradient(
-                    gradient: Gradient(colors: [globalStore.colorGray1, Color.black]),
-                    center: .top,
-                    startRadius: 600,
-                    endRadius: 1800))
-                .edgesIgnoringSafeArea(.all)
-            VStack {
+                .fill(Color.clear)
+                .frame(width: 400, height: 300)
+            
+            Image("Image_002")
+                .resizable()
+                .scaledToFit()
+                .clipShape(Circle())
+                .padding()
+                .frame(width: 600, height: 300)
+        }//HStack
+            
+            HStack(alignment: .bottom) {
                 
-                Text("Prehistoric cave paintings were made using\ncharcoal and ochre that were readily\navailable in the surroundings")
-                    .font(Font.custom("Cinzel-Medium", size: 28)).foregroundColor(.black)
-                    .padding(.init(top: 0, leading: 50, bottom: 30, trailing: 50))
+                Image("PersonImage_001")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 400, height: 400)
                 
-            }//VStack
+                Image("ConceptText_003")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 600, height: 400)
+            }//HStack
+        }//VStack
+    
     }
 }
 
 struct ConceptView4: View {
     @EnvironmentObject var globalStore: GlobalStore
+    @State private var offsetToggle1: Bool = false
+    @State private var offsetToggle2: Bool = false
+    @State private var offsetToggle3: Bool = false
+    @State private var triangleToggle: Bool = false
+
     var body: some View {
+        Rectangle()
+            .fill(RadialGradient(
+                gradient: Gradient(colors: [globalStore.colorGray1, Color.black]),
+                center: .top,
+                startRadius: 600,
+                endRadius: 1800))
+            .edgesIgnoringSafeArea(.all)
+    VStack {
+        
+        HStack{
             Rectangle()
-                .fill(RadialGradient(
-                    gradient: Gradient(colors: [globalStore.colorGray1, Color.black]),
-                    center: .top,
-                    startRadius: 600,
-                    endRadius: 1800))
-                .edgesIgnoringSafeArea(.all)
-            VStack {
+                .fill(Color.clear)
+                .frame(width: 400, height: 300)
+            
+            ZStack {
                 
-                Text("However in the era of Digital art,\nthe colors that the digital world perceives\nare solely determined by the difference in\nRGB values on a flat screen.")
-                    .font(Font.custom("Cinzel-Medium", size: 28)).foregroundColor(.black)
-                    .padding(.init(top: 0, leading: 50, bottom: 30, trailing: 50))
+                Image("Image_001")
+                    .resizable()
+                    .scaledToFit()
+                    .clipShape(Circle())
+                    .padding()
+                    .frame(width: 600, height: 300)
+                    .offset(x: offsetToggle2 ? -160 : 0)
+                    .onAppear(){ offsetToggle2 = true }.animation(.easeInOut(duration: 3))
                 
-            }//VStack
+                Image("Image_002")
+                    .resizable()
+                    .scaledToFit()
+                    .clipShape(Circle())
+                    .padding()
+                    .frame(width: 600, height: 300)
+                    .offset(x: offsetToggle3 ? -200 : 0)
+                    .onAppear(){ offsetToggle3 = true }.animation(.easeInOut(duration: 3))
+
+                Triangle()
+                    .fill(RadialGradient(
+                        gradient: Gradient(colors: [Color.black, globalStore.colorGray1]),
+                        center: .top,
+                        startRadius: 0,
+                        endRadius: 300))
+                    .frame(width: triangleToggle ? 250 : 0, height: 300)
+                    .rotationEffect(.degrees(-90))
+                    .opacity(0.5)
+                    .onAppear(){ triangleToggle = true }.animation(.easeInOut(duration: 3))
+
+                Image("ConceptImage_001")
+                    .resizable()
+                    .scaledToFit()
+                    .clipShape(Circle())
+                    .padding()
+                    .frame(width: 300, height: 300)
+                    .offset(x: offsetToggle1 ? 160 : 0)
+                    .onAppear(){ offsetToggle1 = true }.animation(.easeInOut(duration: 3))
+            }
+        }//HStack
+            
+            HStack(alignment: .bottom) {
+                
+                Image("PersonImage_001")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 400, height: 400)
+
+                Image("ConceptText_004")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 600, height: 400)
+
+            }//HStack
+        }//VStack
+    
     }
 }
 
 struct ConceptView5: View {
     @EnvironmentObject var globalStore: GlobalStore
     var body: some View {
+        Rectangle()
+            .fill(RadialGradient(
+                gradient: Gradient(colors: [globalStore.colorGray1, Color.black]),
+                center: .top,
+                startRadius: 600,
+                endRadius: 1800))
+            .edgesIgnoringSafeArea(.all)
+    VStack {
+        
+        HStack{
             Rectangle()
-                .fill(RadialGradient(
-                    gradient: Gradient(colors: [globalStore.colorGray1, Color.black]),
-                    center: .top,
-                    startRadius: 600,
-                    endRadius: 1800))
-                .edgesIgnoringSafeArea(.all)
-            VStack{
-                Text("This gallery provides an opportunity to\nexplore the colors found in artworks and\narchitectural materials around us,\nhoping that we can preserve the\npreciousness of the things that exist\naround us.")
-                    .font(Font.custom("Cinzel-Medium", size: 28)).foregroundColor(.black)
-                    .padding(.init(top: 0, leading: 50, bottom: 30, trailing: 50))
-            }//VStack
+                .fill(Color.clear)
+                .frame(width: 400, height: 10)
+            
+        }//HStack
+            
+            HStack(alignment: .bottom) {
+                
+                Image("PersonImage_001")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 400, height: 400)
+                
+                Image("ConceptText_005")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 600, height: 690)
+            }//HStack
+        }//VStack
+    
     }
 }
 
+struct ConceptView6: View {
+    @EnvironmentObject var globalStore: GlobalStore
+    var body: some View {
+        Rectangle()
+            .fill(RadialGradient(
+                gradient: Gradient(colors: [globalStore.colorGray1, Color.black]),
+                center: .top,
+                startRadius: 600,
+                endRadius: 1800))
+            .edgesIgnoringSafeArea(.all)
+    VStack {
+        
+        HStack{
+            Rectangle()
+                .fill(Color.clear)
+                .frame(width: 400, height: 10)
+            
+        }//HStack
+            
+            HStack(alignment: .bottom) {
+                
+                Image("PersonImage_001")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 400, height: 400)
+                
+                Image("ConceptText_006")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 600, height: 690)
+            }//HStack
+        }//VStack
+    
+    }
+}
 
 
 
