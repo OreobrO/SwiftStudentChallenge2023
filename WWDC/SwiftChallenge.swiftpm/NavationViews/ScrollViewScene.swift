@@ -56,6 +56,7 @@ struct ScrollViewScene: View {
                     Text("GALLERY OF WHAT WE SEE")
                         .font(.system(size: 80)).fontWeight(.bold).foregroundColor(.black)
                         .offset(y: -30)
+                        .shadow(radius: 5, x: 0, y: 10)
                         .padding()
                 }//VStack
                 

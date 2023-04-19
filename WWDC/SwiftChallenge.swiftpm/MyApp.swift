@@ -4,7 +4,8 @@ import SwiftUI
 struct MyApp: App {
 
     init() {
-        CustomFont.registerFonts(fontName: "Cinzel-VariableFont_wght")
+        CustomFont.registerFonts(fontName: "Cinzel-Bold")
+        CustomFont.registerFonts(fontName: "Cinzel-Regular")
     }
     
     var body: some Scene {
@@ -14,3 +15,4 @@ struct MyApp: App {
         }
     }
 }
+
