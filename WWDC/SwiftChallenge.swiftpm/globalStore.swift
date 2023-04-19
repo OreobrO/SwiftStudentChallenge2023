@@ -13,10 +13,10 @@ class GlobalStore: ObservableObject {
     @Published var colorGray0 = Color(red: 1.0, green: 1.0, blue: 1.0)
     @Published var colorGray1 = Color(red: 0.95, green: 0.95, blue: 0.95)
     @Published var colorGray2 = Color(red: 0.7, green: 0.7, blue: 0.7)
-    @Published var bgColor0 = Color(red: 0.8, green: 0.8, blue: 0.8)
-    @Published var bgColor1 = Color(red: 0.8, green: 0.8, blue: 0.8)
-    @Published var bgColor2 = Color(red: 0.8, green: 0.8, blue: 0.8)
-    @Published var bgColor3 = Color(red: 0.8, green: 0.8, blue: 0.8)
+    @Published var bgColor0 = Color(red: 0.9, green: 0.9, blue: 0.9)
+    @Published var bgColor1 = Color(red: 0.9, green: 0.9, blue: 0.9)
+    @Published var bgColor2 = Color(red: 0.9, green: 0.9, blue: 0.9)
+    @Published var bgColor3 = Color(red: 0.9, green: 0.9, blue: 0.9)
     @Published var colorGrades: [Double] = [0, 0, 0]
     @Published var score: [String] = ["", "", ""]
     @Published var brightness1: CGFloat = 1
@@ -37,7 +37,7 @@ extension GlobalStore {
         colorGrades = [compareColor1, compareColor2, compareColor3]
         
         for i in 0...2 {
-            if colorGrades[i] <= 15 { score[i] = "Perfect!" } else if colorGrades[i]  > 15 && colorGrades[i] <= 40 { score[i] = "Very good!" } else if colorGrades[i] > 40 { score[i] = "Try again" }
+            if colorGrades[i] <= 5 { score[i] = "Perfect!" } else if colorGrades[i]  > 5 && colorGrades[i] <= 25 { score[i] = "Very good!" } else if colorGrades[i] > 25 { score[i] = "Try again" }
         }
         print(colorGrades)
     }

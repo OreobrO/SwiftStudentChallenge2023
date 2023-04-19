@@ -113,7 +113,7 @@ struct MatchColorView: View {
                                         print("Redo")
                                     }.buttonStyle(.bordered).controlSize(.large).font(.body.bold()).foregroundColor(Color.black).background(Color.white).cornerRadius(10).padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
                                     
-                                    if indexNum != info.image.count - 1 {
+//                                    if indexNum != info.image.count - 1 {
                                         Button("Done"){
                                             print(globalStore.colorGrades)
                                             globalStore.compareColorScore(currentIndex: indexNum)
@@ -122,16 +122,16 @@ struct MatchColorView: View {
                                                 popUpToggle = true
                                             }
                                         }.buttonStyle(.bordered).controlSize(.large).font(.body.bold()).foregroundColor(Color.white).background(LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.5), Color.blue.opacity(0.8)]), startPoint: .top, endPoint: .bottom)).cornerRadius(10).padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-                                    } else {
-                                        Button("Done"){
-                                            print(globalStore.colorGrades)
-                                            globalStore.compareColorScore(currentIndex: indexNum)
-                                            //info 와 globalStore의 값 비교하기
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                                                endingToggle = true
-                                            }
-                                        }.buttonStyle(.bordered).controlSize(.large).font(.body.bold()).foregroundColor(Color.white).background(LinearGradient(gradient: Gradient(colors: [Color.red.opacity(0.7), Color.red.opacity(0.9)]), startPoint: .top, endPoint: .bottom)).cornerRadius(10).padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-                                    }
+//                                    } else {
+//                                        Button("Done"){
+//                                            print(globalStore.colorGrades)
+//                                            globalStore.compareColorScore(currentIndex: indexNum)
+//                                            //info 와 globalStore의 값 비교하기
+//                                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+//                                                endingToggle = true
+//                                            }
+//                                        }.buttonStyle(.bordered).controlSize(.large).font(.body.bold()).foregroundColor(Color.white).background(LinearGradient(gradient: Gradient(colors: [Color.red.opacity(0.7), Color.red.opacity(0.9)]), startPoint: .top, endPoint: .bottom)).cornerRadius(10).padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+//                                    }
                                     
                                     Spacer().frame(height: 64)
                                 }

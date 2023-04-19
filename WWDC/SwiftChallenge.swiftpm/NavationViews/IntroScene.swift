@@ -11,6 +11,7 @@ struct IntroScene: View {
     
     @EnvironmentObject var globalStore: GlobalStore
     @State private var radiusToggle: Bool = false
+    @State private var shadowToggle: Bool = false
     
     var body: some View {
         ZStack {
@@ -26,6 +27,9 @@ struct IntroScene: View {
                 
             Text("Gallery of\nWHAT WE SEE")
                 .font(Font.custom("Cinzel-Bold", size: 100)).foregroundColor(.black)
+                .shadow(radius: shadowToggle ? 5 : 0, x: 0, y: shadowToggle ? 10 : 0)
+                .onAppear() { shadowToggle = true }
+                .animation(.easeInOut(duration: 2))
 
         }.background(Color.black).edgesIgnoringSafeArea(.all)
     }

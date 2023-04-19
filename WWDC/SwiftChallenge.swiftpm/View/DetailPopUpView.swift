@@ -44,10 +44,10 @@ struct DetailPopUpView: View {
                                     .clipShape(Circle())
                                     .padding(.leading, 70)
                                 VStack(alignment: .leading) {
-                                    Text("This is the title of the material")
-                                        .font(.system(size: 40)).fontWeight(.bold).foregroundColor(.black)
+                                    Text(info.PopTitle[indexNum])
+                                        .font(Font.custom("Cinzel-Bold", size: 35))
                                         .multilineTextAlignment(.leading)
-                                        .frame(width: 350, height: 100, alignment: .top)
+                                        .frame(width: 370, height: 100, alignment: .top)
                                         .padding(.top, 20)
                                         .lineLimit(2)
                                     
@@ -76,9 +76,9 @@ struct DetailPopUpView: View {
                             Spacer().frame(height: 10)
                             
                             Text(info.PopDetail[indexNum])
-                                .font(.body).fontWeight(.light).foregroundColor(.black)
+                                .font(Font.custom("Cinzel-Medium", size: 18)).foregroundColor(.black)
                                 .multilineTextAlignment(.center)
-                                .frame(width: 500, height: 160, alignment: .top)
+                                .frame(width: 600, height: 160, alignment: .top)
                                 .lineLimit(7)
                             
                             Spacer().frame(height: 30)

@@ -80,7 +80,7 @@ struct ConceptView1: View {
                 .edgesIgnoringSafeArea(.all)
             VStack{
                 Text("Have you ever wondered\nwhy certain colors are the way they are and what they mean?")
-                    .font(Font.custom("Cinzel-Regular", size: 28)).foregroundColor(.black)
+                    .font(Font.custom("Cinzel-Medium", size: 28)).foregroundColor(.black)
                     .padding(.init(top: 0, leading: 50, bottom: 30, trailing: 50))
             }//VStack
     }
@@ -98,7 +98,7 @@ struct ConceptView2: View {
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 Text("Egyptian Blue, the world's first synthetic\npigment made during the Bronze Age in Egypt,\nhas been a precious color used for thousands of years.")
-                    .font(Font.custom("Cinzel-Regular", size: 28)).foregroundColor(.black)
+                    .font(Font.custom("Cinzel-Medium", size: 28)).foregroundColor(.black)
                     .padding(.init(top: 0, leading: 50, bottom: 30, trailing: 50))
                 
             }//VStack
@@ -118,7 +118,7 @@ struct ConceptView3: View {
             VStack {
                 
                 Text("Prehistoric cave paintings were made using\ncharcoal and ochre that were readily\navailable in the surroundings")
-                    .font(Font.custom("Cinzel-Regular", size: 28)).foregroundColor(.black)
+                    .font(Font.custom("Cinzel-Medium", size: 28)).foregroundColor(.black)
                     .padding(.init(top: 0, leading: 50, bottom: 30, trailing: 50))
                 
             }//VStack
@@ -138,7 +138,7 @@ struct ConceptView4: View {
             VStack {
                 
                 Text("However in the era of Digital art,\nthe colors that the digital world perceives\nare solely determined by the difference in\nRGB values on a flat screen.")
-                    .font(Font.custom("Cinzel-Regular", size: 28)).foregroundColor(.black)
+                    .font(Font.custom("Cinzel-Medium", size: 28)).foregroundColor(.black)
                     .padding(.init(top: 0, leading: 50, bottom: 30, trailing: 50))
                 
             }//VStack
@@ -157,7 +157,7 @@ struct ConceptView5: View {
                 .edgesIgnoringSafeArea(.all)
             VStack{
                 Text("This gallery provides an opportunity to\nexplore the colors found in artworks and\narchitectural materials around us,\nhoping that we can preserve the\npreciousness of the things that exist\naround us.")
-                    .font(Font.custom("Cinzel-Regular", size: 28)).foregroundColor(.black)
+                    .font(Font.custom("Cinzel-Medium", size: 28)).foregroundColor(.black)
                     .padding(.init(top: 0, leading: 50, bottom: 30, trailing: 50))
             }//VStack
     }

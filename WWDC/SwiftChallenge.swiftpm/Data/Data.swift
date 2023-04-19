@@ -32,28 +32,44 @@ let info = Info(
         Color(red: 158/255, green: 174/255, blue: 126/255),
         Color(red: 204/255, green: 71/255, blue: 43/255),
         Color(red: 165/255, green: 182/255, blue: 197/255),
-        Color(red: 149/255, green: 52/255, blue: 52/255)
-    ],
+        Color(red: 149/255, green: 52/255, blue: 52/255)],
     color2: [
         Color(red: 186/255, green: 59/255, blue: 16/255),
         Color(red: 136/255, green: 162/255, blue: 161/255),
         Color(red: 238/255, green: 194/255, blue: 34/255),
         Color(red: 177/255, green: 159/255, blue: 157/255),
-        Color(red: 200/255, green: 200/255, blue: 200/255)        ],
+        Color(red: 200/255, green: 200/255, blue: 200/255)],
     color3: [
         Color(red: 239/255, green: 235/255, blue: 216/255),
         Color(red: 213/255, green: 142/255, blue: 58/255),
         Color(red: 130/255, green: 193/255, blue: 212/255),
         Color(red: 102/255, green: 118/255, blue: 56/255),
-        Color(red: 38/255, green: 48/255, blue: 63/255)        ],
+        Color(red: 38/255, green: 48/255, blue: 63/255)],
     PopImage: ["PopImage_001", "PopImage_002", "PopImage_003", "PopImage_004", "PopImage_005"],
-    PopTitle: ["PopTitle_001", "PopTitle_002", "PopTitle_003", "PopTitle_004", "PopTitle_005"],
+    PopTitle: ["Egyption Blue\nThe first pigment", "Golden Sheen\nHeavenly Beauty", "Pastel & Cayon\nRough texture", "Floating Roof on\nWalls and glasses", "Inside-Out\nColor of function"],
     PopDetail: [
+        "The people of ancient Egypt drew on walls to remember their lives and what they wanted in the afterlife.\nThe blue color they used was called Egyptian Blue, the first pigment in human history. It meant that good things will happen again in the future. The red color, called Red Ochre, meant power and winning.",
         
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consectetur lorem at consequat porttitor. Nam auctor turpis et purus cursus vehicula quis et magna. Sed non risus nec quam molestie congue eu et neque. Suspendisse ipsum est, maximus a luctus vel, maximus vel libero. Nullam malesuada fringilla massa, a pellentesque tellus tristique at. Sed a facilisis dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consectetur lorem at consequat porttitor. Nam auctor turpis et purus cursus vehicula quis et magna. Sed non risus nec quam molestie congue eu et neque. Suspendisse ipsum est, maximus a luctus vel, maximus vel libero. Nullam malesuada fringilla massa, a pellentesque tellus tristique at. Sed a facilisis dolor.  ",
+        "Venus's long hair and large seashell, as well as the steel wings of Pegasus, are all tinted with gold. Botticelli mixed the actual gold powder with egg white and applied it to the canvas to create a beautiful golden sheen. Then, he thinly applied tempera paint over it to give an overall hazy but bright expression.",
         
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consectetur lorem at consequat porttitor. Nam auctor turpis et purus cursus vehicula quis et magna. Sed non risus nec quam molestie congue eu et neque. Suspendisse ipsut", "PopDetail_003", "PopDetail_004", "PopDetail_005"]
+        "\nMunch used bright and exaggerated colors to show the great fear he felt while traveling toward his hometown of Oslo. He filled the canvas with colors that looked like they were moving, using blunt pastels and crayons.",
+        
+        "This  was the German Pavilion for the 1929 Barcelona International Exposition, an important building in the history of modern architecture. The horizontal roof supported by eight chrome alloy columns, seems to float in the sky, while the marble walls and glass create a flow of space that can both divide and connect spaces.",
+        
+        "This inside-out building is a cultural center with a library, art museum, and music center. The architect focused on a structure where various forms of art and literature could come together. The building has a color system based on function, with green for plumbing, blue for ventilation, yellow for electrical wiring, and red for circulation."]
 )
+
+/* Font License
+ [Cinzel-Bold, Cinzel-Medium, Cinzel-Regular]
+ > Font name: Cinzel
+ > Author: Natanael Gama
+ > Published: 2012
+ > Format: TTF
+ > SiteName: Google Fonts
+ > URL: https://fonts.google.com/specimen/Cinzel/about?query=Cinzel
+ > License: These fonts are licensed under the Open Font License. You can use them in your products & projects – print or digital, commercial or otherwise.
+ */
+
 /* Image License
  
 [Image_001]
@@ -105,53 +121,53 @@ let info = Info(
  > License: Photo taken by myself on July 2017. Free to use commercial and non-commercial purposes. No permission needed
  
  [PopImage_001]
- > ImageName:
- > Author:
- > Published:
- > Reproduced:
- > Format:
- > SiteName:
- > URL:
- > License:
+ > ImageName: Egyptian blue
+ > Author: FK1954
+ > Published: 23 March 2010
+ > Format: JPG
+ > SiteName: Wikipedia
+ > URL: https://commons.wikimedia.org/wiki/File:Egyptian_blue.jpg
+ > License: Public Domain. I, the copyright holder of this work, release this work into the public domain. This applies worldwide.
+ In some countries this may not be legally possible; if so:
+ I grant anyone the right to use this work for any purpose, without any conditions, unless such conditions are required by law.
  
  [PopImage_002]
- > ImageName:
- > Author:
- > Published:
- > Reproduced:
- > Format:
- > SiteName:
- > URL:
- > License:
+ > ImageName: Gold
+ > Author: Kier in Sight
+ > Published: 17 April 2021
+ > Format: JPG
+ > SiteName: Unsplash
+ > URL: https://unsplash.com/ko/사진/s99bwKNke8g
+ > License: Unsplash photos are made to be used freely. Our license reflects that. All photos can be downloaded and used for free,  Commercial and non-commercial purposes, No permission needed (though attribution is appreciated!)
  
  [PopImage_003]
- > ImageName:
- > Author:
- > Published:
- > Reproduced:
- > Format:
- > SiteName:
- > URL:
- > License:
+ > ImageName: Crayons
+ > Author: Jorgebarrios
+ > Published: 18 October 2007
+ > Format: JPG
+ > SiteName: Wikipedia
+ > URL: https://commons.wikimedia.org/wiki/File:Crayones_cera.jpg
+ > License: Public Domain. I, the copyright holder of this work, release this work into the public domain. This applies worldwide.
+ In some countries this may not be legally possible; if so:
+ I grant anyone the right to use this work for any purpose, without any conditions, unless such conditions are required by law.
  
  [PopImage_004]
- > ImageName:
- > Author:
- > Published:
- > Reproduced:
- > Format:
- > SiteName:
- > URL:
- > License:
+ > ImageName: Barcelona Pavilion
+ > Author: Tomas Val
+ > Published: 6 October 2020
+ > Format: JPG
+ > SiteName: Unsplash
+ > URL: https://unsplash.com/ko/사진/PL66TZWnlws
+ > License: Unsplash photos are made to be used freely. Our license reflects that. All photos can be downloaded and used for free,  Commercial and non-commercial purposes, No permission needed (though attribution is appreciated!)
  
  [PopImage_005]
- > ImageName:
- > Author:
- > Published:
- > Reproduced:
- > Format:
- > SiteName:
- > URL:
- > License:
+ > ImageName: Centre Pompidou
+ > Author: Artem Horovenko
+ > Published: 21 August 2021
+ > Format: JPG
+ > SiteName: Unsplash
+ > URL: https://unsplash.com/ko/사진/PokplJPIaaA
+ > License: Unsplash photos are made to be used freely. Our license reflects that. All photos can be downloaded and used for free,  Commercial and non-commercial purposes, No permission needed (though attribution is appreciated!)
+ 
  
 */

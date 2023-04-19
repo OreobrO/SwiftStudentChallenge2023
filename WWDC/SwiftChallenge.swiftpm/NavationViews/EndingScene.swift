@@ -21,7 +21,7 @@ struct EndingScene: View {
                         endRadius: 1800))
                     .edgesIgnoringSafeArea(.all)
                 Text("This is the ending")
-                    .font(.system(size: 80)).fontWeight(.bold).foregroundColor(.black)
+                    .font(Font.custom("Cinzel-Bold", size: 100)).foregroundColor(.black)
                     .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
                     .offset(x: -30)
             }.edgesIgnoringSafeArea(.all)
