@@ -75,11 +75,15 @@ struct DetailPopUpView: View {
                             } //HStack
                             Spacer().frame(height: 10)
                             
-                            Text(info.PopDetail[indexNum])
-                                .font(Font.custom("Cinzel-Medium", size: 18)).foregroundColor(.black)
-                                .multilineTextAlignment(.center)
-                                .frame(width: 600, height: 160, alignment: .top)
-                                .lineLimit(7)
+                            Image(info.PopDetailImage[indexNum])
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 600, height: 160)
+//                            Text(info.PopDetail[indexNum])
+//                                .font(Font.custom("Cinzel-Medium", size: 18)).foregroundColor(.black)
+//                                .multilineTextAlignment(.center)
+//                                .frame(width: 600, height: 160, alignment: .top)
+//                                .lineLimit(7)
                             
                             Spacer().frame(height: 30)
                             HStack {

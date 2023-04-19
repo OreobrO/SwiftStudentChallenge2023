@@ -18,7 +18,8 @@ struct Info {
     let color3: [Color]
     let PopImage: [String]
     let PopTitle: [String]
-    let PopDetail: [String]
+//    let PopDetail: [String]
+    let PopDetailImage: [String]
     
 }
 
@@ -47,20 +48,23 @@ let info = Info(
         Color(red: 38/255, green: 48/255, blue: 63/255)],
     PopImage: ["PopImage_001", "PopImage_002", "PopImage_003", "PopImage_004", "PopImage_005"],
     PopTitle: ["Egyption Blue\nThe first pigment", "Golden Sheen\nHeavenly Beauty", "Pastel & Cayon\nRough texture", "Floating Roof on\nWalls and glasses", "Inside-Out\nColor of function"],
-    PopDetail: [
-        "The people of ancient Egypt drew on walls to remember their lives and what they wanted in the afterlife.\nThe blue color they used was called Egyptian Blue, the first pigment in human history. It meant that good things will happen again in the future. The red color, called Red Ochre, meant power and winning.",
-        
-        "Venus's long hair and large seashell, as well as the steel wings of Pegasus, are all tinted with gold. Botticelli mixed the actual gold powder with egg white and applied it to the canvas to create a beautiful golden sheen. Then, he thinly applied tempera paint over it to give an overall hazy but bright expression.",
-        
-        "\nMunch used bright and exaggerated colors to show the great fear he felt while traveling toward his hometown of Oslo. He filled the canvas with colors that looked like they were moving, using blunt pastels and crayons.",
-        
-        "This  was the German Pavilion for the 1929 Barcelona International Exposition, an important building in the history of modern architecture. The horizontal roof supported by eight chrome alloy columns, seems to float in the sky, while the marble walls and glass create a flow of space that can both divide and connect spaces.",
-        
-        "This inside-out building is a cultural center with a library, art museum, and music center. The architect focused on a structure where various forms of art and literature could come together. The building has a color system based on function, with green for plumbing, blue for ventilation, yellow for electrical wiring, and red for circulation."]
+//    PopDetail: [
+//        "The people of ancient Egypt drew on walls to remember their lives and what they wanted in the afterlife.\nThe blue color they used was called Egyptian Blue, the first pigment in human history. It meant that good things will happen again in the future. The red color, called Red Ochre, meant power and winning.",
+//
+//        "Venus's long hair and large seashell, as well as the steel wings of Pegasus, are all tinted with gold. Botticelli mixed the actual gold powder with egg white and applied it to the canvas to create a beautiful golden sheen. Then, he thinly applied tempera paint over it to give an overall hazy but bright expression.",
+//
+//        "\nMunch used bright and exaggerated colors to show the great fear he felt while traveling toward his hometown of Oslo. He filled the canvas with colors that looked like they were moving, using blunt pastels and crayons.",
+//
+//        "This  was the German Pavilion for the 1929 Barcelona International Exposition, an important building in the history of modern architecture. The horizontal roof supported by eight chrome alloy columns, seems to float in the sky, while the marble walls and glass create a flow of space that can both divide and connect spaces.",
+//
+//        "This inside-out building is a cultural center with a library, art museum, and music center. The architect focused on a structure where various forms of art and literature could come together. The building has a color system based on function, with green for plumbing, blue for ventilation, yellow for electrical wiring, and red for circulation."],
+    
+    PopDetailImage: ["Text_001", "Text_002", "Text_003", "Text_004", "Text_005"]
+    
 )
 
 /* Font License
- [Cinzel-Bold, Cinzel-Medium, Cinzel-Regular]
+ [Cinzel-Bold, Cinzel-Medium]
  > Font name: Cinzel
  > Author: Natanael Gama
  > Published: 2012

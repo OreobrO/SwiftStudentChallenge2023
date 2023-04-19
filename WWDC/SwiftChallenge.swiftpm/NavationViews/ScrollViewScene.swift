@@ -36,9 +36,10 @@ struct ScrollViewScene: View {
                                             .frame(width: geometry.size.width / 4.5, height: geometry.size.height / 2)
                                             .clipped()
                                             .shadow(radius: 10, x: 10, y: 10)
-                                            .padding()
+                                            .padding(.bottom, 8)
                                         Text(info.title[i])
-                                            .font(.title3).fontWeight(.medium).foregroundColor(.black)
+                                            .font(Font.custom("Cinzel-Bold", size: 20)).foregroundColor(.black)
+//                                            .font(.title3).fontWeight(.medium).foregroundColor(.black)
                                             .padding(.top, 0)
                                         Spacer()
                                     }

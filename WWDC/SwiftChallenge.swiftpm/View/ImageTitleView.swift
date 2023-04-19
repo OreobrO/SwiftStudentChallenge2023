@@ -25,9 +25,9 @@ struct ImageTitleView: View {
                     .overlay(
                         HStack{
                             VStack(alignment: .leading) {
-                                Text(info.author[indexNum]).font(.body.bold()).padding(EdgeInsets(top: 16, leading: 12, bottom: 0, trailing: 10)).lineLimit(2)
-                                Text(info.title[indexNum]).font(.body.bold()).padding(EdgeInsets(top: 0, leading: 12, bottom: 0, trailing: 10)).lineLimit(3)
-                                Text(info.detail[indexNum]).font(.body).padding(EdgeInsets(top: 0, leading: 12, bottom: 0, trailing: 10)).lineLimit(2)
+                                Text(info.author[indexNum]).font(Font.custom("Cinzel-Bold", size: 16)).foregroundColor(.black).padding(EdgeInsets(top: 16, leading: 12, bottom: 0, trailing: 10)).lineLimit(3)
+                                Text(info.title[indexNum]).font(Font.custom("Cinzel-Bold", size: 16)).foregroundColor(.black).padding(EdgeInsets(top: 0, leading: 12, bottom: 0, trailing: 10)).lineLimit(3)
+                                Text(info.detail[indexNum]).font(Font.custom("Cinzel-Medium", size: 16)).foregroundColor(.black).padding(EdgeInsets(top: 0, leading: 12, bottom: 0, trailing: 10)).lineLimit(3)
                                 Spacer()
                             }
                             Spacer()
