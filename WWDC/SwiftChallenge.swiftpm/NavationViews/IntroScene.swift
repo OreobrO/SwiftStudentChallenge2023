@@ -25,6 +25,7 @@ struct IntroScene: View {
                 .animation(.easeInOut(duration: 2))
                 
             Text("Gallery of\nWHAT WE SEE")
+//                .font(Font.custom("Cinzel-VariableFont_wght", size: 100))
                 .font(.system(size: 100)).fontWeight(.bold).foregroundColor(.black)
 
         }.background(Color.black).edgesIgnoringSafeArea(.all)

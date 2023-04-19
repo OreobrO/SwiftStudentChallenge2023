@@ -53,7 +53,7 @@ struct ScrollViewScene: View {
                         }.padding(EdgeInsets(top: 30, leading: 100, bottom: 0, trailing: 100))//HStack
                     }//ScrollView
                     
-                    Text("Choose Image from the Gallery")
+                    Text("GALLERY OF WHAT WE SEE")
                         .font(.system(size: 80)).fontWeight(.bold).foregroundColor(.black)
                         .offset(y: -30)
                         .padding()
