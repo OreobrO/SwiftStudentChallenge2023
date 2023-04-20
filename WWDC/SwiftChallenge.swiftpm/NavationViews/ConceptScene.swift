@@ -138,6 +138,7 @@ struct ConceptView2: View {
                 .clipShape(Circle())
                 .padding()
                 .frame(width: 600, height: 300)
+                .shadow(radius: 5, x: 0, y: 10)
         }//HStack
             
             HStack(alignment: .bottom) {
@@ -181,6 +182,8 @@ struct ConceptView3: View {
                 .clipShape(Circle())
                 .padding()
                 .frame(width: 600, height: 300)
+                .shadow(radius: 5, x: 0, y: 10)
+
         }//HStack
             
             HStack(alignment: .bottom) {
@@ -231,6 +234,7 @@ struct ConceptView4: View {
                     .padding()
                     .frame(width: 600, height: 300)
                     .offset(x: offsetToggle2 ? -160 : 0)
+                    .shadow(radius: 5, x: 0, y: 10)
                     .onAppear(){ offsetToggle2 = true }.animation(.easeInOut(duration: 3))
                 
                 Image("Image_002")
@@ -240,6 +244,7 @@ struct ConceptView4: View {
                     .padding()
                     .frame(width: 600, height: 300)
                     .offset(x: offsetToggle3 ? -200 : 0)
+                    .shadow(radius: 5, x: 0, y: 10)
                     .onAppear(){ offsetToggle3 = true }.animation(.easeInOut(duration: 3))
 
                 Triangle()
@@ -250,7 +255,7 @@ struct ConceptView4: View {
                         endRadius: 300))
                     .frame(width: triangleToggle ? 250 : 0, height: 300)
                     .rotationEffect(.degrees(-90))
-                    .opacity(0.5)
+                    .opacity(triangleToggle ? 0.5 : 0)
                     .onAppear(){ triangleToggle = true }.animation(.easeInOut(duration: 3))
 
                 Image("ConceptImage_001")
@@ -260,6 +265,7 @@ struct ConceptView4: View {
                     .padding()
                     .frame(width: 300, height: 300)
                     .offset(x: offsetToggle1 ? 160 : 0)
+                    .shadow(radius: 5, x: 0, y: 10)
                     .onAppear(){ offsetToggle1 = true }.animation(.easeInOut(duration: 3))
             }
         }//HStack

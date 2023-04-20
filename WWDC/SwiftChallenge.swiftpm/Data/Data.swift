@@ -24,31 +24,34 @@ struct Info {
 }
 
 let info = Info(
-    image: ["Image_001", "Image_002", "Image_003", "Image_004", "Image_005"],
-    title: ["Nebamun Hunting\nFowl in the Marshes\n(1,350 BCE)", "Birth Of Venus\n(1485)", "The Scream\n(1895)", "Barcelona Pavilion\n(1929)", "Centre Pompidou\n(1977)"],
-    author: ["Unknown", "Sandro Botticelli", "Edvard Munch", "Ludwig Mies van der Rohe", "Renzo Piano, Richard Rogers and Gianfranco Franchini"],
-    detail: ["fresco painting", "Tempera on Canvas", "Oil, tempera, pastel and crayon on cardboard", "Spain", "Paris"],
+    image: ["Image_001", "Image_002", "Image_003", "Image_004", "Image_005", "Image_006"],
+    title: ["Nebamun Hunting\nFowl in the Marshes\n(1,350 BCE)", "Birth Of Venus\n(1485)", "The Scream\n(1895)", "Barcelona Pavilion\n(1929)", "Centre Pompidou\n(1977)", "Apple Park Visitor Center\n(2017)"],
+    author: ["Unknown", "Sandro Botticelli", "Edvard Munch", "Ludwig Mies van der Rohe", "Renzo Piano, Richard Rogers and Gianfranco Franchini", "Foster and Partners"],
+    detail: ["fresco painting", "Tempera on Canvas", "Oil, tempera, pastel and crayon on cardboard", "Spain", "Paris", "Cupertino, CA"],
     color1: [
         Color(red: 93/255, green: 145/255, blue: 165/255),
         Color(red: 158/255, green: 174/255, blue: 126/255),
         Color(red: 204/255, green: 71/255, blue: 43/255),
         Color(red: 165/255, green: 182/255, blue: 197/255),
-        Color(red: 149/255, green: 52/255, blue: 52/255)],
+        Color(red: 149/255, green: 52/255, blue: 52/255),
+        Color(red: 165/255, green: 136/255, blue: 104/255)],
     color2: [
         Color(red: 186/255, green: 59/255, blue: 16/255),
         Color(red: 136/255, green: 162/255, blue: 161/255),
         Color(red: 238/255, green: 194/255, blue: 34/255),
         Color(red: 177/255, green: 159/255, blue: 157/255),
-        Color(red: 200/255, green: 200/255, blue: 200/255)],
+        Color(red: 200/255, green: 200/255, blue: 200/255),
+        Color(red: 130/255, green: 126/255, blue: 83/255)],
     color3: [
         Color(red: 239/255, green: 235/255, blue: 216/255),
         Color(red: 213/255, green: 142/255, blue: 58/255),
         Color(red: 130/255, green: 193/255, blue: 212/255),
         Color(red: 102/255, green: 118/255, blue: 56/255),
-        Color(red: 38/255, green: 48/255, blue: 63/255)],
-    PopImage: ["PopImage_001", "PopImage_002", "PopImage_003", "PopImage_004", "PopImage_005"],
-    PopTitle: ["Egyption Blue\nThe first pigment", "Golden Sheen\nHeavenly Beauty", "Pastel & Cayon\nRough texture", "Floating Roof on\nWalls and glasses", "Inside-Out\nColor of function"],
-    PopDetailImage: ["Text_001", "Text_002", "Text_003", "Text_004", "Text_005"]
+        Color(red: 103/255, green: 97/255, blue: 65/255),
+        Color(red: 228/255, green: 225/255, blue: 220/255)],
+    PopImage: ["PopImage_001", "PopImage_002", "PopImage_003", "PopImage_004", "PopImage_005", "PopImage_006"],
+    PopTitle: ["Egyption Blue\nThe first pigment", "Golden Sheen\nHeavenly Beauty", "Pastel & Cayon\nRough texture", "Floating Roof on\nWalls and glasses", "Inside-Out\nColor of function", "Floating Roof\nnature inside"],
+    PopDetailImage: ["Text_001", "Text_002", "Text_003", "Text_004", "Text_005", "Text_006"]
 )
 
 /* Font License
@@ -112,6 +115,15 @@ let info = Info(
  > URL: N/A
  > License: Photo taken by myself on July 2017. Free to use commercial and non-commercial purposes. No permission needed
  
+ [Image_006]
+ > ImageName: Apple Park, Cupertino, US
+ > Author: Severin Stalder
+ > Published: 15 Faburary 2020
+ > Format: JPG
+ > SiteName: Unsplash
+ > URL: https://unsplash.com/ko/사진/2j75u62e6Ok
+ > License: Unsplash photos are made to be used freely. Our license reflects that. All photos can be downloaded and used for free,  Commercial and non-commercial purposes, No permission needed (though attribution is appreciated!)
+ 
  [PopImage_001]
  > ImageName: Egyptian blue
  > Author: FK1954
@@ -161,6 +173,15 @@ let info = Info(
  > URL: https://unsplash.com/ko/사진/PokplJPIaaA
  > License: Unsplash photos are made to be used freely. Our license reflects that. All photos can be downloaded and used for free,  Commercial and non-commercial purposes, No permission needed (though attribution is appreciated!)
  
+ [PopImage_006]
+ > ImageName: Apple Park Tree
+ > Author: Josh Withers
+ > Published: 05 December 2019
+ > Format: JPG
+ > SiteName: Unsplash
+ > URL: https://unsplash.com/ko/사진/0OlzUl3wqak
+ > License: Unsplash photos are made to be used freely. Our license reflects that. All photos can be downloaded and used for free,  Commercial and non-commercial purposes, No permission needed (though attribution is appreciated!)
+ 
  [PersonImage_001]
  > ImageName: People Avatar Collection
  > Author: callmetak
@@ -180,6 +201,17 @@ let info = Info(
  > License: Unsplash photos are made to be used freely. Our license reflects that. All photos can be downloaded and used for free,  Commercial and non-commercial purposes, No permission needed (though attribution is appreciated!)
  
 */
+
+/* Code License
+ [ColorPalleteView1,2,3]
+ > Name: Color Picker
+ > Author: Haipp
+ > Published: 31 May 2021
+ > Format: JPG
+ > SiteName: Youtube
+ > URL: https://www.youtube.com/watch?v=dPQM332JOWY
+ 
+ */
 
 /*
  all the other assets are created by myself, Mingyu Choi

@@ -37,7 +37,7 @@ extension GlobalStore {
         colorGrades = [compareColor1, compareColor2, compareColor3]
         
         for i in 0...2 {
-            if colorGrades[i] <= 5 { score[i] = "Perfect!" } else if colorGrades[i]  > 5 && colorGrades[i] <= 20 { score[i] = "Very good!" } else if colorGrades[i] > 20 { score[i] = "Try again" }
+            if colorGrades[i] <= 5 { score[i] = "Perfect!" } else if colorGrades[i]  > 5 && colorGrades[i] <= 18 { score[i] = "Very good!" } else if colorGrades[i] > 20 { score[i] = "Try again" }
         }
         print(colorGrades)
     }
