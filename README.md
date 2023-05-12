@@ -1,7 +1,8 @@
 # SwiftStudentChallenge2023
 
- [Features]
- The 'Gallery of What We See' project is an initiative aimed at emphasizing the importance of color and materials through the history of art and architecture, and raising awareness and appreciation for the objects that surround us.
+[Features]
+
+The 'Gallery of What We See' project is an initiative aimed at emphasizing the importance of color and materials through the history of art and architecture, and raising awareness and appreciation for the objects that surround us.
 
  In today's digital world, it is easy to select the colors and textures we desire, but the significance of the materials and colors used in past art pieces is often overlooked. The project seeks to understand the changes in color and materials used in art and architecture throughout history, and the socio-cultural context in which they were employed. 
 
@@ -11,13 +12,15 @@
 
 
 [Technology] 
- I developed a Color Picker and a scoring system for my project. The Color Picker allows users to select a desired color by setting the start location and adjusting the saturation based on the distance. The Hue is determined by the angle from the start location. However, the Brightness cannot be adjusted directly by the user, so I used the preset HSB value of the color and input it as a variable in the Color Picker.
+
+I developed a Color Picker and a scoring system for my project. The Color Picker allows users to select a desired color by setting the start location and adjusting the saturation based on the distance. The Hue is determined by the angle from the start location. However, the Brightness cannot be adjusted directly by the user, so I used the preset HSB value of the color and input it as a variable in the Color Picker.
 
  As for the scoring system, users input Hue, Saturation, and Brightness values obtained through the Color Picker. I compared these values with the preset RGB values of famous artworks or buildings and calculated the score based on the difference between the two. Fortunately, the Playground app allowed for a direct comparison of RGB and HSB values. 
 
  The score is categorized into three levels: "Perfect", "Very good", and "Try again". The distance between two colors was calculated by taking the square root of the sum of the squared differences of their R, G, B.
 
 [After all...]
+
 I was so proud to have the opportunity to express my thoughts and interests in colors and materials that I've been passionate about while studying and working in architecture. I made a promise to myself to design good experiences for more people in the digital world. That's why I joined the Apple Developer Academy and this Swift Student Challenge made me grow the fastest.
 
 As my first app, I poured a lot of effort and thought into it, and it was a valuable experience to be able to submit a completed project.
