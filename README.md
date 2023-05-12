@@ -12,6 +12,12 @@
 비록 컬러 매칭 체험도 디지털 평면에서 이뤄지지만, 사용자가 작품에 사용된 색깔을 똑같이 맞추어보고 그 색에 대한 흥미로운 이야기를 전달하는 방식으로 이 메시지를 전달하고 싶었습니다.
 궁극적으로, 이 프로젝트는 이러한 접근 방식을 통해 우리를 둘러싼 사물에 대한 관심과 감상을 높이는 것을 목표로 합니다.
 
+![Simulator Screenshot - iPad Pro (12 9-inch) (6th generation) - 2023-05-12 at 16 13 08](https://github.com/OreobrO/SwiftStudentChallenge2023/assets/120009346/60391cbe-814d-430d-adbf-3a19f3a3f3b4)
+![Simulator Screenshot - iPad Pro (12 9-inch) (6th generation) - 2023-05-12 at 16 13 20](https://github.com/OreobrO/SwiftStudentChallenge2023/assets/120009346/5aaf04c4-7f99-4e8c-9410-f0af717751c8)
+![Simulator Screenshot - iPad Pro (12 9-inch) (6th generation) - 2023-05-12 at 16 13 28](https://github.com/OreobrO/SwiftStudentChallenge2023/assets/120009346/c5978481-e7f3-4c75-86f9-653c812d9655)
+![Simulator Screenshot - iPad Pro (12 9-inch) (6th generation) - 2023-05-12 at 16 13 32](https://github.com/OreobrO/SwiftStudentChallenge2023/assets/120009346/c98184ee-1657-4d00-b9c6-976ff8527359)
+![Simulator Screenshot - iPad Pro (12 9-inch) (6th generation) - 2023-05-12 at 16 13 53](https://github.com/OreobrO/SwiftStudentChallenge2023/assets/120009346/497ab64c-e4e3-4f98-83fa-67ae83c60cfc)
+![Simulator Screenshot - iPad Pro (12 9-inch) (6th generation) - 2023-05-12 at 16 13 55](https://github.com/OreobrO/SwiftStudentChallenge2023/assets/120009346/675ccea0-921e-4b50-a373-023687b93fbc)
 
 
 **[Features]**
@@ -30,10 +36,3 @@ I was so proud to have the opportunity to express my thoughts and interests in c
 
 As my first app, I poured a lot of effort and thought into it, and it was a valuable experience to be able to submit a completed project.
 
-
-![Simulator Screenshot - iPad Pro (12 9-inch) (6th generation) - 2023-05-12 at 16 13 08](https://github.com/OreobrO/SwiftStudentChallenge2023/assets/120009346/60391cbe-814d-430d-adbf-3a19f3a3f3b4)
-![Simulator Screenshot - iPad Pro (12 9-inch) (6th generation) - 2023-05-12 at 16 13 20](https://github.com/OreobrO/SwiftStudentChallenge2023/assets/120009346/5aaf04c4-7f99-4e8c-9410-f0af717751c8)
-![Simulator Screenshot - iPad Pro (12 9-inch) (6th generation) - 2023-05-12 at 16 13 28](https://github.com/OreobrO/SwiftStudentChallenge2023/assets/120009346/c5978481-e7f3-4c75-86f9-653c812d9655)
-![Simulator Screenshot - iPad Pro (12 9-inch) (6th generation) - 2023-05-12 at 16 13 32](https://github.com/OreobrO/SwiftStudentChallenge2023/assets/120009346/c98184ee-1657-4d00-b9c6-976ff8527359)
-![Simulator Screenshot - iPad Pro (12 9-inch) (6th generation) - 2023-05-12 at 16 13 53](https://github.com/OreobrO/SwiftStudentChallenge2023/assets/120009346/497ab64c-e4e3-4f98-83fa-67ae83c60cfc)
-![Simulator Screenshot - iPad Pro (12 9-inch) (6th generation) - 2023-05-12 at 16 13 55](https://github.com/OreobrO/SwiftStudentChallenge2023/assets/120009346/675ccea0-921e-4b50-a373-023687b93fbc)
